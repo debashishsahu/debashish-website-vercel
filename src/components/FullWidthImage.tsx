@@ -7,6 +7,7 @@ interface FullWidthImageProps {
   alt: string
   caption?: string
   aspectRatio?: AspectRatio
+  objectFit?: 'cover' | 'contain' | 'natural'
 }
 
 const aspectClasses: Record<AspectRatio, string> = {
@@ -21,18 +22,33 @@ export default function FullWidthImage({
   alt,
   caption,
   aspectRatio = 'wide',
+  objectFit = 'cover',
 }: FullWidthImageProps) {
   return (
     <figure className="my-8">
-      <div className={`relative w-full ${aspectClasses[aspectRatio]} rounded-lg overflow-hidden`}>
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className="object-cover"
-          loading="lazy"
-        />
-      </div>
+      {objectFit === 'natural' ? (
+        <div className="rounded-lg overflow-hidden bg-[#F5F4F0]">
+          <Image
+            src={src}
+            alt={alt}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        <div className={`relative w-full ${aspectClasses[aspectRatio]} rounded-lg overflow-hidden bg-[#F5F4F0]`}>
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            className={objectFit === 'contain' ? 'object-contain' : 'object-cover'}
+            loading="lazy"
+          />
+        </div>
+      )}
       {caption && (
         <figcaption className="flex items-start gap-2 mt-2.5">
           <div className="w-[3px] bg-amber rounded-sm flex-shrink-0 mt-[3px] self-stretch" />

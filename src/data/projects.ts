@@ -35,8 +35,6 @@ export const projects: Project[] = [
     tier: 'key',
     prev: null,
     next: 'smart-cities',
-    heroImage: '/images/imicampaign/hero.jpg',
-    cardImage: '/images/imicampaign/hero.jpg',
   },
   {
     slug: 'smart-cities',
@@ -53,8 +51,6 @@ export const projects: Project[] = [
     tier: 'key',
     prev: 'imicampaign',
     next: 'customs-clearance',
-    heroImage: '/images/smart-cities/top-image.png',
-    cardImage: '/images/smart-cities/top-image.png',
   },
   {
     slug: 'customs-clearance',
@@ -71,8 +67,6 @@ export const projects: Project[] = [
     tier: 'key',
     prev: 'smart-cities',
     next: 'fzholidays',
-    heroImage: '/images/customs-clearance/hero.jpg',
-    cardImage: '/images/customs-clearance/hero.jpg',
   },
   {
     slug: 'fzholidays',
@@ -89,8 +83,6 @@ export const projects: Project[] = [
     tier: 'key',
     prev: 'customs-clearance',
     next: 'space-explorer',
-    heroImage: '/images/fzholidays/hero.jpg',
-    cardImage: '/images/fzholidays/hero.jpg',
   },
   {
     slug: 'space-explorer',
@@ -107,8 +99,6 @@ export const projects: Project[] = [
     tier: 'key',
     prev: 'fzholidays',
     next: 'ezili',
-    heroImage: '/images/space-explorer/header-image.png',
-    cardImage: '/images/space-explorer/header-image.png',
   },
 
   // OTHER PROJECTS

@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 interface NavItem {
   title: string
@@ -30,19 +33,22 @@ export default function PrevNextNav({ prev, next }: PrevNextNavProps) {
           {/* Prev */}
           <div className="flex-1 border-b md:border-b-0 md:border-r border-linen">
             {prev ? (
-              <Link
-                href={prev.href}
-                className="group flex flex-col py-7 px-4 hover:bg-[#F0EDE8] border-l-[3px] border-transparent hover:border-amber transition-all"
-              >
-                <span className="text-12 font-medium mist uppercase tracking-label text-mist mb-1.5">
-                  ← Previous project
-                </span>
-                <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5">
-                  {prev.title}
-                </span>
-                {prev.descriptor && (
-                  <span className="text-13 text-slate mt-1">{prev.descriptor}</span>
-                )}
+              <Link href={prev.href}>
+                <motion.div
+                  className="flex flex-col py-7 px-4 border-l-[3px] border-transparent cursor-pointer"
+                  whileHover={{ backgroundColor: '#F0EDE8', borderLeftColor: '#D4882A' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="text-12 font-medium uppercase tracking-label text-mist mb-1.5">
+                    ← Previous project
+                  </span>
+                  <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5">
+                    {prev.title}
+                  </span>
+                  {prev.descriptor && (
+                    <span className="text-13 text-slate mt-1">{prev.descriptor}</span>
+                  )}
+                </motion.div>
               </Link>
             ) : (
               <div className="flex items-center justify-center py-7 text-mist">—</div>
@@ -51,14 +57,14 @@ export default function PrevNextNav({ prev, next }: PrevNextNavProps) {
 
           {/* All work */}
           <div className="flex-shrink-0 flex items-center justify-center py-7 px-8 border-b md:border-b-0 md:border-r border-linen">
-            <Link
-              href="/work"
-              aria-label="All work"
-              className="flex flex-col items-center gap-2 group"
-            >
-              <div className="w-9 h-9 rounded-full border border-amber flex items-center justify-center text-amber group-hover:bg-amber group-hover:text-ink transition-colors">
+            <Link href="/work" aria-label="All work" className="flex flex-col items-center gap-2">
+              <motion.div
+                className="w-9 h-9 rounded-full border border-amber flex items-center justify-center text-amber"
+                whileHover={{ backgroundColor: '#D4882A', color: '#1A2530', scale: 1.08 }}
+                transition={{ duration: 0.2 }}
+              >
                 <GridIcon />
-              </div>
+              </motion.div>
               <span className="text-11 font-medium uppercase tracking-label text-amber">
                 All work
               </span>
@@ -68,19 +74,22 @@ export default function PrevNextNav({ prev, next }: PrevNextNavProps) {
           {/* Next */}
           <div className="flex-1">
             {next ? (
-              <Link
-                href={next.href}
-                className="group flex flex-col items-end py-7 px-4 hover:bg-[#F0EDE8] border-r-[3px] border-transparent hover:border-amber transition-all"
-              >
-                <span className="text-12 font-medium uppercase tracking-label text-mist mb-1.5">
-                  Next project →
-                </span>
-                <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5 text-right">
-                  {next.title}
-                </span>
-                {next.descriptor && (
-                  <span className="text-13 text-slate mt-1 text-right">{next.descriptor}</span>
-                )}
+              <Link href={next.href}>
+                <motion.div
+                  className="flex flex-col items-end py-7 px-4 border-r-[3px] border-transparent cursor-pointer"
+                  whileHover={{ backgroundColor: '#F0EDE8', borderRightColor: '#D4882A' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="text-12 font-medium uppercase tracking-label text-mist mb-1.5">
+                    Next project →
+                  </span>
+                  <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5 text-right">
+                    {next.title}
+                  </span>
+                  {next.descriptor && (
+                    <span className="text-13 text-slate mt-1 text-right">{next.descriptor}</span>
+                  )}
+                </motion.div>
               </Link>
             ) : (
               <div className="flex items-center justify-center py-7 text-mist">—</div>

@@ -7,8 +7,8 @@ interface PersonaCard {
   role: string
   roleColor?: string
   body: string
-  goals: string[]
-  painPoints: string[]
+  goals?: string[]
+  painPoints?: string[]
 }
 
 interface ConceptCard {
@@ -33,47 +33,40 @@ interface FeatureCard {
 
 type MediaTextCardProps = PersonaCard | ConceptCard | FeatureCard
 
+const roleColorMap: Record<string, { bg: string; text: string }> = {
+  blue:   { bg: '#E6F1FB', text: '#185FA5' },
+  purple: { bg: '#EDE8F5', text: '#6B3FA0' },
+  green:  { bg: '#EAF3DE', text: '#3B6D11' },
+  amber:  { bg: '#FAEEDA', text: '#854F0B' },
+  slate:  { bg: '#F1EFE8', text: '#5F5E5A' },
+}
+
 export default function MediaTextCard(props: MediaTextCardProps) {
   if (props.variant === 'persona') {
+    const rc = props.roleColor
+      ? (roleColorMap[props.roleColor] ?? { bg: props.roleColor, text: '#185FA5' })
+      : { bg: '#E6F1FB', text: '#185FA5' }
     return (
-      <div className="flex flex-col md:flex-row gap-8 border border-linen rounded-xl overflow-hidden my-6">
-        <div className="relative w-full md:w-[280px] flex-shrink-0 aspect-[4/3] md:aspect-auto md:min-h-[240px]">
-          <Image src={props.image} alt={props.name} fill className="object-cover" loading="lazy" />
-        </div>
-        <div className="p-6 flex-1">
+      <div className="border border-linen rounded-xl overflow-hidden my-6">
+        <div className="p-6">
           <h3 className="font-display text-22 font-medium text-ink mb-2">{props.name}</h3>
           <span
             className="inline-block text-12 font-medium px-3 py-1 rounded-full mb-4"
-            style={{ background: props.roleColor || '#E6F1FB', color: '#185FA5' }}
+            style={{ background: rc.bg, color: rc.text }}
           >
             {props.role}
           </span>
-          <p className="text-13 text-slate mb-4 leading-[1.65]">{props.body}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-12 font-medium uppercase tracking-label text-amber mb-2">Goals</p>
-              <ul className="flex flex-col gap-1.5">
-                {props.goals.map((g, i) => (
-                  <li key={i} className="flex items-start gap-2 text-13 text-ink">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber flex-shrink-0 mt-[5px]" />
-                    {g}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="text-12 font-medium uppercase tracking-label text-mist mb-2">Pain Points</p>
-              <ul className="flex flex-col gap-1.5">
-                {props.painPoints.map((p, i) => (
-                  <li key={i} className="flex items-start gap-2 text-13 text-ink">
-                    <span className="w-1.5 h-1.5 rounded-full bg-mist flex-shrink-0 mt-[5px]" />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <p className="text-13 text-slate leading-[1.65]">{props.body}</p>
         </div>
+        <Image
+          src={props.image}
+          alt={props.name}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+          loading="lazy"
+        />
       </div>
     )
   }
