@@ -11,6 +11,7 @@ interface PriorityItem {
 
 interface StakeholderItem {
   number: number | string
+  role?: string
   purpose: string
   outcome: string
 }
@@ -72,11 +73,19 @@ export default function LabeledItem({
     return (
       <div className="divide-y divide-linen border-y border-linen">
         {stakeholderItems.map((item, i) => (
-          <div key={i} className="grid grid-cols-[80px_1fr_1fr] gap-6 py-5">
-            <div className="font-display text-[28px] font-medium text-linen leading-none">
-              {String(item.number).padStart(2, '0')}
+          <div key={i} className="grid grid-cols-[120px_1fr_1fr] gap-6 py-5">
+            <div>
+              <div className="font-display text-[28px] font-medium text-linen leading-none mb-1">
+                {String(item.number).padStart(2, '0')}
+              </div>
+              {item.role && (
+                <p className="text-12 font-medium text-ink leading-[1.4]">{item.role}</p>
+              )}
             </div>
             <div>
+              <p className="text-11 font-medium uppercase tracking-label text-slate mb-1.5">
+                Purpose
+              </p>
               <p className="text-14 text-ink leading-[1.65]">{item.purpose}</p>
             </div>
             <div>

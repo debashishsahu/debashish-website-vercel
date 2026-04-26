@@ -30,7 +30,7 @@ export default function PageScrollNav({ sections }: { sections: Section[] }) {
   }, [sections])
 
   return (
-    <nav className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-end select-none">
+    <nav className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-end select-none">
       {sections.map((section, i) => {
         const isActive = i === activeIndex
         const isPast = i < activeIndex
@@ -56,7 +56,7 @@ export default function PageScrollNav({ sections }: { sections: Section[] }) {
               }}
             >
               <span
-                className={`text-[10px] font-medium uppercase tracking-widest transition-all duration-200 whitespace-nowrap ${
+                className={`text-12 font-medium uppercase tracking-label transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? 'opacity-100 text-ink'
                     : 'opacity-0 group-hover:opacity-50 text-slate'

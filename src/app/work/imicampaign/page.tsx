@@ -13,6 +13,8 @@ import LabeledItem from '@/components/LabeledItem'
 import ImageGroup from '@/components/ImageGroup'
 import MediaTextCard from '@/components/MediaTextCard'
 import PageScrollNav from '@/components/PageScrollNav'
+import VideoEmbed from '@/components/VideoEmbed'
+import DocumentEmbed from '@/components/DocumentEmbed'
 
 const SECTIONS = [
   { id: 'project-plan',   label: 'Project Plan' },
@@ -389,21 +391,19 @@ export default function IMICampaignPage() {
             {/* ── Section 5 — Final Designs ── */}
             <div id="final-designs" className="scroll-mt-24" />
             <SectionHeader variant="A" title="Final Designs" />
-            <FullWidthImage
-              src="/images/imicampaign/final-designs.jpg"
-              alt="Final high-fidelity designs for the IMIcampaign platform"
-              objectFit="natural"
-            />
-            <LabeledItem
-              variant="numbered"
-              numberedItems={[
+            <VideoEmbed
+              layout="stack"
+              videos={[
                 {
-                  number: '01',
+                  src: 'https://res.cloudinary.com/dhnfnetro/video/upload/v1777122402/IMIMobile_bykxqd.mp4',
+                },
+                {
+                  src: 'https://res.cloudinary.com/dhnfnetro/video/upload/v1777122400/IMI_Dashboard_ya05nd.mp4',
                   title: 'Dashboard: Monitoring Campaigns',
                   body: 'Describes how a manager logs in and makes informed decisions using real-time graphs and tabular data to drill down to the most granular campaign detail.',
                 },
                 {
-                  number: '02',
+                  src: 'https://res.cloudinary.com/dhnfnetro/video/upload/v1777122397/IMI_Campaign_Mgmt_lc0ll2.mp4',
                   title: 'Visual Campaign Builder: Provisioning Campaign',
                   body: 'Shows how a manager creates a campaign using the visual builder tool — from blank canvas to fully mapped campaign journey.',
                 },
@@ -416,21 +416,20 @@ export default function IMICampaignPage() {
               label="Design principle"
               text='"A good design is only as good as its documentation."'
             />
-            <LabeledItem
-              variant="numbered"
-              numberedItems={[
+            <DocumentEmbed
+              documents={[
                 {
-                  number: '01',
+                  src: 'https://res.cloudinary.com/dhnfnetro/image/upload/v1777125236/IMIcampaign_WF_fkm2ur.pdf',
                   title: 'Wireframe Specification Document',
                   body: 'Comprehensive technical blueprint detailing every UI component, data visualisation, and screen-level interaction. Defined the logic of the platform — specifying ideal data formats and expected outcomes for every complex table and chart.',
                 },
                 {
-                  number: '02',
+                  src: 'https://res.cloudinary.com/dhnfnetro/image/upload/v1777125234/IMIcampaign_VD_SG_eyh1eh.pdf',
                   title: 'Visual Specification Document',
                   body: 'High-fidelity roadmap of visual treatment for every component, graph, and chart. Translated visual styles into precise technical values in pixels and percentages — developer-friendly, directly implementable in CSS.',
                 },
                 {
-                  number: '03',
+                  src: 'https://res.cloudinary.com/dhnfnetro/image/upload/v1777125233/IMIcampaign_SG_sjelyy.pdf',
                   title: 'Styleguide',
                   body: "Single source of truth unifying the platform's visual identity. Detailed exact colour palettes, shadow depths, and height/width constraints for all interface elements — ensuring pixel-perfect consistency across every module.",
                 },

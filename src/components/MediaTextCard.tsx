@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 interface PersonaCard {
   variant: 'persona'
-  image: string
+  image?: string
   name: string
   role: string
   roleColor?: string
@@ -17,9 +17,11 @@ interface ConceptCard {
   number: number | string
   title: string
   ideaLabel?: string
+  ideaText?: string
   issueLabel?: string
+  issueText?: string
   whyLabel?: string
-  text: string
+  text?: string
   isChosen?: boolean
 }
 
@@ -46,8 +48,30 @@ export default function MediaTextCard(props: MediaTextCardProps) {
     const rc = props.roleColor
       ? (roleColorMap[props.roleColor] ?? { bg: props.roleColor, text: '#185FA5' })
       : { bg: '#E6F1FB', text: '#185FA5' }
+    const initial = props.name.charAt(0).toUpperCase()
     return (
       <div className="border border-linen rounded-xl overflow-hidden my-6">
+        {/* Avatar / image */}
+        {props.image ? (
+          <Image
+            src={props.image}
+            alt={props.name}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+            loading="lazy"
+          />
+        ) : (
+          <div
+            className="w-full flex items-center justify-center"
+            style={{ background: rc.bg, height: '120px' }}
+          >
+            <span className="font-display text-[56px] font-medium" style={{ color: rc.text }}>
+              {initial}
+            </span>
+          </div>
+        )}
         <div className="p-6">
           <h3 className="font-display text-22 font-medium text-ink mb-2">{props.name}</h3>
           <span
@@ -57,25 +81,54 @@ export default function MediaTextCard(props: MediaTextCardProps) {
             {props.role}
           </span>
           <p className="text-13 text-slate leading-[1.65]">{props.body}</p>
+          {(props.goals || props.painPoints) && (
+            <div className="grid grid-cols-2 gap-4 mt-5">
+              {props.goals && (
+                <div>
+                  <p className="text-11 font-medium uppercase tracking-label text-amber mb-2">Goals</p>
+                  <ul className="flex flex-col gap-1.5">
+                    {props.goals.map((g, i) => (
+                      <li key={i} className="flex items-start gap-2 text-13 text-ink">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber flex-shrink-0 mt-[5px]" />
+                        {g}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {props.painPoints && (
+                <div>
+                  <p className="text-11 font-medium uppercase tracking-label text-slate mb-2">Pain Points</p>
+                  <ul className="flex flex-col gap-1.5">
+                    {props.painPoints.map((p, i) => (
+                      <li key={i} className="flex items-start gap-2 text-13 text-ink">
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate/50 flex-shrink-0 mt-[5px]" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
         </div>
-        <Image
-          src={props.image}
-          alt={props.name}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-          loading="lazy"
-        />
       </div>
     )
   }
 
   if (props.variant === 'concept') {
     return (
-      <div className="border border-linen rounded-xl overflow-hidden">
-        <div className="relative w-full aspect-video">
-          <Image src={props.image} alt={props.title} fill className="object-cover" loading="lazy" />
+      <div className={`border rounded-xl overflow-hidden ${props.isChosen ? 'border-amber' : 'border-linen'}`}>
+        <div className="bg-[#F5F4F0]">
+          <Image
+            src={props.image}
+            alt={props.title}
+            width={0}
+            height={0}
+            sizes="(min-width: 768px) 33vw, 100vw"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+            loading="lazy"
+          />
         </div>
         <div className="p-5">
           <div
@@ -89,13 +142,29 @@ export default function MediaTextCard(props: MediaTextCardProps) {
           {props.ideaLabel && (
             <p className="text-12 font-medium text-amber uppercase tracking-label mb-1">{props.ideaLabel}</p>
           )}
+          {props.ideaText && (
+            <p className="text-13 text-slate leading-[1.6] mb-3">{props.ideaText}</p>
+          )}
           {props.issueLabel && (
             <p className="text-12 font-medium text-mist uppercase tracking-label mb-1">{props.issueLabel}</p>
+          )}
+          {props.issueText && (
+            <p className="text-13 text-slate leading-[1.6] mb-3">{props.issueText}</p>
           )}
           {props.whyLabel && (
             <p className="text-12 font-medium text-[#3B6D11] uppercase tracking-label mb-1">{props.whyLabel}</p>
           )}
-          <p className="text-13 text-slate leading-[1.6]">{props.text}</p>
+          {props.text && (
+            <p className="text-13 text-slate leading-[1.6]">{props.text}</p>
+          )}
+          {props.isChosen && (
+            <div className="mt-3 inline-flex items-center gap-1.5 text-12 font-medium text-amber">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 6l3 3 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              Chosen concept
+            </div>
+          )}
         </div>
       </div>
     )
