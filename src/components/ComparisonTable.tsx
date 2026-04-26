@@ -4,7 +4,7 @@ interface ComparisonTableProps {
   rows: {
     category?: string
     feature?: string
-    values: string[]
+    values?: string[]
   }[]
 }
 
@@ -57,7 +57,7 @@ export default function ComparisonTable({
               return (
                 <tr key={i} className="bg-canvas border-b border-linen">
                   <td className="text-13 text-ink px-5 py-3">{row.feature}</td>
-                  {row.values.map((v, j) => (
+                  {(row.values ?? []).map((v, j) => (
                     <td
                       key={j}
                       className={`text-center px-5 py-3 ${valueStyles[v] || 'text-ink text-13'} ${
