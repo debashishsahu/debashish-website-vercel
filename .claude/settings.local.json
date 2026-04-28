@@ -64,7 +64,19 @@
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_9ac0091bbbfa4389b2fec33ab5bbe162~mv2.png\" -o \"imicampaign-card.png\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_258610ccc0ed42499e6389eae8f22fe0~mv2.png\" -o \"smart-cities-card.png\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_2aefa999060244d4a7b39dd2a02c266a~mv2.png\" -o \"customs-clearance-card.png\")",
-      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_b4b85591c4c245a7ac060929f1f1d463~mv2.jpg\" -o \"fzholidays-card.jpg\")"
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_b4b85591c4c245a7ac060929f1f1d463~mv2.jpg\" -o \"fzholidays-card.jpg\")",
+      "Bash(mkdir -p D:/Claude/debashish-website-vercel/public/images/zakoopi)",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_6a0c02bf15554defb5c068c1967f4f88~mv2_d_2428_1394_s_2.jpg\" -o \"design-challenge.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_6d34bdc883184948ba9db5a37863eb9d~mv2_d_2420_1584_s_2.jpg\" -o \"personas.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_f2e493b5694f485faab63c659070728a~mv2.jpg\" -o \"user-journey.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_6f50026d13e0430184beed52b6c06f4f~mv2_d_3694_1322_s_2.jpg\" -o \"user-flows-01.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_1227fbce937f4f8389cda505a5741e82~mv2_d_1920_1280_s_2.jpg\" -o \"hero.jpg\")",
+      "Bash(mkdir -p D:/Claude/debashish-website-vercel/public/images/sensit)",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_7125d660162143f5ad489059fa4c69aa~mv2_d_1753_1240_s_2.jpg\" -o \"sensit-flyer-01.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_878971d890fa443f93fc1b8b04a64a2a~mv2_d_1752_1237_s_2.jpg\" -o \"sensit-flyer-02.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_e3a90e72c1d44b798548d74cbd5d5dc4~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/unaccompanied-minor/hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_36e2e5d078df46e8a9b6bbc2c0ecaec0~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/smart-companion/hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_9c4841c3bd8844bfbf3cb03d76750a4b~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/touch-retail/hero.png\")"
     ]
   }
 }

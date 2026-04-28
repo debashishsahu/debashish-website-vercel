@@ -179,7 +179,7 @@ export const projects: Project[] = [
     slug: 'smart-companion',
     cardImage: '/images/work/smart-companion-card.png',
     title: 'Context Smart Companion',
-    client: 'Imaginea Design',
+    client: 'L&T Infotech',
     category: 'Mobile · Transit',
     duration: 'N/A',
     period: '2015',
