@@ -53,7 +53,18 @@
       "Bash(curl -sO \"https://static.wixstatic.com/media/c24e7f_d59ae9ddb65649d1b5e7ee7c2d816a4b~mv2.jpg\")",
       "Bash(curl -sO \"https://static.wixstatic.com/media/c24e7f_ba211fd5ecaf4304a12c3f666eb659e1~mv2.png\")",
       "Bash(curl -sO \"https://static.wixstatic.com/media/c24e7f_6763b0e5bb0b47d4b7318d6375f504ca~mv2.png\")",
-      "Bash(curl -sO \"https://static.wixstatic.com/media/c24e7f_4b923370f3dd4a89bdd567be0d06d9c9~mv2.webp\")"
+      "Bash(curl -sO \"https://static.wixstatic.com/media/c24e7f_4b923370f3dd4a89bdd567be0d06d9c9~mv2.webp\")",
+      "WebFetch(domain:static.wixstatic.com)",
+      "Bash(curl -L -o \"ut-session-01.png\" \"https://static.wixstatic.com/media/c24e7f_8d7d3cdec9154721801b2147223c9dcf~mv2.png/v1/fill/w_880,h_496,al_tl,lg_1,q_90,enc_avif,quality_auto/c24e7f_8d7d3cdec9154721801b2147223c9dcf~mv2.png\")",
+      "Bash(curl -L -o \"ut-session-02.png\" \"https://static.wixstatic.com/media/c24e7f_f59ae6ae458b4dcfa022811080dd8d90~mv2.png/v1/fill/w_880,h_496,al_tl,lg_1,q_90,enc_avif,quality_auto/c24e7f_f59ae6ae458b4dcfa022811080dd8d90~mv2.png\")",
+      "Bash(curl -L -o \"ut-session-03.png\" \"https://static.wixstatic.com/media/c24e7f_bfda8bd04c634f2aba1d8829813278d8~mv2.png/v1/fill/w_880,h_496,al_tl,lg_1,q_90,enc_avif,quality_auto/c24e7f_bfda8bd04c634f2aba1d8829813278d8~mv2.png\")",
+      "Bash(curl -L -o \"ut-session-04.png\" \"https://static.wixstatic.com/media/c24e7f_7d8e096e19fb41169d79afa783583154~mv2.png/v1/fill/w_880,h_496,al_tl,lg_1,q_90,enc_avif,quality_auto/c24e7f_7d8e096e19fb41169d79afa783583154~mv2.png\")",
+      "Bash(curl -L -o \"ut-session-05.png\" \"https://static.wixstatic.com/media/c24e7f_e8f3662e75e241e5af9dfe9f6bf80228~mv2.png/v1/fill/w_880,h_496,al_tl,lg_1,q_90,enc_avif,quality_auto/c24e7f_e8f3662e75e241e5af9dfe9f6bf80228~mv2.png\")",
+      "Bash(mkdir -p \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\work\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_9ac0091bbbfa4389b2fec33ab5bbe162~mv2.png\" -o \"imicampaign-card.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_258610ccc0ed42499e6389eae8f22fe0~mv2.png\" -o \"smart-cities-card.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_2aefa999060244d4a7b39dd2a02c266a~mv2.png\" -o \"customs-clearance-card.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_b4b85591c4c245a7ac060929f1f1d463~mv2.jpg\" -o \"fzholidays-card.jpg\")"
     ]
   }
 }

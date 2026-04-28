@@ -72,10 +72,17 @@ export default function ProjectCard({ variant, image, title, description, tags, 
           whileHover={{ borderColor: '#D4882A', y: -4 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="relative h-[180px] w-full overflow-hidden">
+          <div className="relative w-full overflow-hidden" style={{ aspectRatio: '450 / 316' }}>
             {image ? (
               <motion.div className="absolute inset-0" whileHover={{ scale: 1.04 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
-                <Image src={image} alt={title} fill className="object-cover" loading="lazy" />
+                <Image
+                  src={image}
+                  alt={`${title} project thumbnail`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px"
+                  className="object-cover"
+                  priority={false}
+                />
               </motion.div>
             ) : (
               <CardPlaceholder tags={tags} size="featured" />
@@ -109,10 +116,17 @@ export default function ProjectCard({ variant, image, title, description, tags, 
         whileHover={{ borderColor: '#D4882A', y: -3 }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="relative h-[110px] w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden" style={{ aspectRatio: '378 / 266' }}>
           {image ? (
             <motion.div className="absolute inset-0" whileHover={{ scale: 1.04 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
-              <Image src={image} alt={title} fill className="object-cover" loading="lazy" />
+              <Image
+                src={image}
+                alt={`${title} project thumbnail`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
+                className="object-cover"
+                priority={false}
+              />
             </motion.div>
           ) : (
             <CardPlaceholder tags={tags} size="standard" />

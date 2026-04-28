@@ -22,6 +22,7 @@ export const projects: Project[] = [
   // KEY PROJECTS
   {
     slug: 'imicampaign',
+    cardImage: '/images/work/imicampaign-card.png',
     title: 'Campaign Management System',
     client: 'IMImobile',
     category: 'Enterprise · UX Design',
@@ -38,6 +39,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'smart-cities',
+    cardImage: '/images/work/smart-cities-card.png',
     title: 'Smart Cities',
     client: 'Honeywell',
     category: 'Enterprise · UX Strategy',
@@ -54,6 +56,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'customs-clearance',
+    cardImage: '/images/work/customs-clearance-card.png',
     title: 'Customs Clearance Application',
     client: 'Agility Logistics',
     category: 'Enterprise · Interaction Design',
@@ -70,6 +73,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'fzholidays',
+    cardImage: '/images/work/fzholidays-card.jpg',
     title: 'FlyDubai Holidays',
     client: 'FlyDubai',
     category: 'B2C · UX Design',
@@ -86,6 +90,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'space-explorer',
+    cardImage: '/images/work/space-explorer-card.png',
     title: 'Space Explorer',
     client: 'Nehru Planetarium',
     category: 'Interaction Design · NID',
@@ -104,6 +109,7 @@ export const projects: Project[] = [
   // OTHER PROJECTS
   {
     slug: 'ezili',
+    cardImage: '/images/work/ezili-card.png',
     title: 'Ezili — Shopping App',
     client: 'Imaginea Design',
     category: 'B2C · Mobile',
@@ -120,6 +126,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'unaccompanied-minor',
+    cardImage: '/images/work/unaccompanied-minor-card.png',
     title: 'Unaccompanied Minors',
     client: 'Imaginea Design',
     category: 'IoT · UX Design',
@@ -136,6 +143,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'touch-retail',
+    cardImage: '/images/work/touch-retail-card.png',
     title: 'Touch Kiosk for Retail',
     client: 'Imaginea Design',
     category: 'Retail · Kiosk',
@@ -152,6 +160,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'sensit',
+    cardImage: '/images/work/sensit-card.png',
     title: 'Sensit',
     client: 'Imaginea Design',
     category: 'IoT · Wellbeing',
@@ -168,6 +177,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'smart-companion',
+    cardImage: '/images/work/smart-companion-card.png',
     title: 'Context Smart Companion',
     client: 'Imaginea Design',
     category: 'Mobile · Transit',
@@ -184,6 +194,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'zakoopi',
+    cardImage: '/images/work/zakoopi-card.png',
     title: 'Zakoopi',
     client: 'Freelance',
     category: 'Web App · NID',
@@ -202,6 +213,7 @@ export const projects: Project[] = [
   // SIDE PROJECTS
   {
     slug: 'vox',
+    cardImage: '/images/work/vox-card.png',
     title: 'VOX',
     client: 'Mindtree / NID',
     category: 'Physical Product · IoT',
@@ -218,6 +230,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'shadow-eaters',
+    cardImage: '/images/work/shadow-eaters-card.png',
     title: 'Shadow Eaters',
     client: 'NID / Mindtree',
     category: 'Interactive Installation',
@@ -234,6 +247,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'ozchi-paper',
+    cardImage: '/images/work/ozchi-card.png',
     title: 'Semantic Emails',
     client: 'OZCHI',
     category: 'Research · Paper',
@@ -250,6 +264,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'drawing-canvas',
+    cardImage: '/images/work/drawing-canvas-card.png',
     title: '3D Drawing Canvas',
     client: 'NID',
     category: 'Interaction Design · NID',
@@ -266,6 +281,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'soundscape-bitten',
+    cardImage: '/images/work/bitten-card.png',
     title: 'Bitten — Soundscape',
     client: 'NID',
     category: 'Sound Design · NID',

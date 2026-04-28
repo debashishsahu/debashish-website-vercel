@@ -680,49 +680,36 @@ export default function SpaceExplorerPage() {
               caption="Prototype 2 — Unity 3D environment with solar system, planets, asteroids, and space fog"
             />
 
-            <LabeledItem
-              variant="numbered"
-              numberedItems={[
-                {
-                  number: '01',
-                  title: 'Objects',
-                  body: 'Sun, planets, spaceship, asteroids, space fog, background sky — each with defined properties.',
-                },
-                {
-                  number: '02',
-                  title: 'Attributes',
-                  body: 'Each object had properties (e.g., the Sun was stationary and a light source; planets moved in fixed orbits).',
-                },
-                {
-                  number: '03',
-                  title: 'Internal Relationships',
-                  body: 'Defined how objects interacted — the spaceship collides with planets if too close; asteroids create obstacles.',
-                },
-                {
-                  number: '04',
-                  title: 'Environment',
-                  body: '3D space setting with starfield, nebulae, and galaxies — the Sun providing dynamic lighting across the scene.',
-                },
+            {/* Game world components — parallel properties, no sequence */}
+            <BulletListBlock
+              title="Game world components"
+              items={[
+                { term: 'Objects',               description: 'Sun, planets, spaceship, asteroids, space fog, background sky — each with defined properties.' },
+                { term: 'Attributes',             description: 'Each object had properties (e.g., the Sun was stationary and a light source; planets moved in fixed orbits).' },
+                { term: 'Internal Relationships', description: 'Defined how objects interacted — the spaceship collides with planets if too close; asteroids create obstacles.' },
+                { term: 'Environment',            description: '3D space setting with starfield, nebulae, and galaxies — the Sun providing dynamic lighting across the scene.' },
               ]}
+              columns={2}
             />
 
+            {/* Gesture evolution — vertical progression, order matters */}
             <LabeledItem
               variant="numbered"
               numberedItems={[
                 {
                   number: '01',
-                  title: 'Initial Gestures (from Prototype 1)',
-                  body: 'Extend arms forward → Move forward. Move extended arms left/right → Turn spaceship left/right.',
+                  title: 'Prototype 1 — Carried Over',
+                  body: 'Extend arms forward → Move forward · Move extended arms left/right → Turn spaceship left/right',
                 },
                 {
                   number: '02',
-                  title: 'Newly Added Gestures',
-                  body: 'Extend arms downward → Pitch spaceship downward. Extend arms upward → Pitch spaceship upward.',
+                  title: 'Newly Added',
+                  body: 'Extend arms downward → Pitch down · Extend arms upward → Pitch up',
                 },
                 {
                   number: '03',
                   title: 'Movement Refinements',
-                  body: 'Introduced Yaw, Roll, and Pitch movements — making spaceship movement significantly more fluid and natural.',
+                  body: 'Introduced Yaw, Roll, and Pitch — making spaceship movement significantly more fluid and natural',
                 },
               ]}
             />
@@ -838,18 +825,58 @@ export default function SpaceExplorerPage() {
               columns={2}
             />
 
-            <SectionHeader variant="B" eyebrow="UI Design" title="UI & Typography" />
-            <ImageCarousel
-              images={[
-                { src: '/images/space-explorer/ui-font-bitshumishi.png', alt: 'Bitshumishi font specimen', caption: 'Bitshumishi — primary font for all game titles and text' },
-                { src: '/images/space-explorer/ui-color-analysis.png', alt: 'Colour analysis of UI elements', caption: 'Colour analysis of UI elements used in games and movies — informed final blue sci-fi aesthetic' },
-                { src: '/images/space-explorer/ui-font-7segment.png', alt: '7-Segment font specimen', caption: '7-Segment — secondary font for in-game numeric values (speed, time)' },
+            <SectionHeader variant="B" eyebrow="UI Design" title="UI & Typography Enhancements" />
+            <Prose>
+              The game&apos;s visual identity went through a deliberate UI overhaul — improving button placements,
+              information layout, and typography choices. Two typefaces were selected for the final design:
+              Bitshumishi as the primary font for all titles and on-screen text, and 7-Segment for in-game
+              numeric values like speed and time. The colour scheme was initially orange/yellow but was revised
+              to blue — informed by a colour analysis of contemporary sci-fi games and films — creating a more
+              authentic modern sci-fi aesthetic.
+            </Prose>
+            <BulletListBlock
+              items={[
+                {
+                  term: 'Bitshumishi',
+                  description: 'Primary typeface — used for all game titles, menus, and body text throughout the interface.',
+                },
+                {
+                  term: '7-Segment',
+                  description: 'Secondary typeface — used exclusively for numeric in-game values: speed gauge, countdown timer, and distance.',
+                },
+                {
+                  term: 'Colour Scheme',
+                  description: 'Shifted from orange/yellow to blue — a colour analysis of sci-fi games and films confirmed blue as the dominant, authentic sci-fi palette.',
+                },
               ]}
+              columns={1}
             />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 my-8">
+              {[
+                { src: '/images/space-explorer/ui-font-bitshumishi.png', alt: 'Bitshumishi font specimen', caption: 'Bitshumishi — primary font for all game titles and text' },
+                { src: '/images/space-explorer/ui-color-analysis.png', alt: 'Colour analysis of UI elements', caption: 'Colour analysis of UI elements used in games and movies' },
+                { src: '/images/space-explorer/ui-font-7segment.png', alt: '7-Segment font specimen', caption: '7-Segment — secondary font for in-game numeric values (speed, time)' },
+              ].map((img, i) => (
+                <div key={i}>
+                  <div className="rounded-md overflow-hidden bg-[#F5F4F0]">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={0}
+                      height={0}
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      style={{ width: '100%', height: 'auto', display: 'block' }}
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-12 text-mist mt-2 pl-1">{img.caption}</p>
+                </div>
+              ))}
+            </div>
 
             <SectionHeader variant="B" eyebrow="Before / After" title="Game UI — Before & After" />
 
-            <SectionHeader variant="B" eyebrow="Before" title="Original Game Screens" />
+            <SectionHeader variant="B" eyebrow="Before" title="Initial Game Screens" />
             <ImageCarousel
               images={[
                 { src: '/images/space-explorer/gameplay-before-00.png', alt: 'Before — Home Screen', caption: 'Before — Home Screen: gives user option to Start the game' },
@@ -891,6 +918,21 @@ export default function SpaceExplorerPage() {
                   label: 'Evaluation Areas',
                   description: 'Gesture comprehension, game mechanics, engagement, and learning retention',
                 },
+              ]}
+            />
+
+            <ImageGroup
+              variant="workshop"
+              fit="cover"
+              tileRatio="16 / 9"
+              caption="User testing sessions — children aged 9–15 playing Space Explorer at Nehru Planetarium"
+              images={[
+                { src: '/images/space-explorer/ut-session-01.png', alt: 'User testing session — children playing Space Explorer' },
+                { src: '/images/space-explorer/ut-session-02.png', alt: 'User testing session — kids gesturing to control the spaceship' },
+                { src: '/images/space-explorer/ut-session-03.png', alt: 'User testing session — group observing gameplay' },
+                { src: '/images/space-explorer/ut-session-04.png', alt: 'User testing session — child navigating the solar system' },
+                { src: '/images/space-explorer/ut-session-06.png', alt: 'User testing session — children engaged with the game' },
+                { src: '/images/space-explorer/ut-session-05.png', alt: 'User testing session — testing gesture recognition' },
               ]}
             />
 
@@ -985,23 +1027,28 @@ export default function SpaceExplorerPage() {
               columns={1}
             />
 
-            {/* YouTube video embeds — placeholder until IDs confirmed */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
               <div className="flex flex-col gap-3">
-                <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-dashed border-amber/50 bg-linen flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <p className="text-12 font-medium text-amber uppercase tracking-label mb-1">Video coming soon</p>
-                    <p className="text-13 text-slate">Concept Video — Space Explorer prototype overview</p>
-                  </div>
+                <div className="relative aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://player.vimeo.com/video/77663692?title=0&byline=0&portrait=0"
+                    className="absolute inset-0 w-full h-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="Space Explorer — Concept Video"
+                  />
                 </div>
                 <p className="text-12 text-mist leading-[1.5]">Concept Video — Space Explorer prototype overview</p>
               </div>
               <div className="flex flex-col gap-3">
-                <div className="relative aspect-video rounded-lg overflow-hidden border-2 border-dashed border-amber/50 bg-linen flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <p className="text-12 font-medium text-amber uppercase tracking-label mb-1">Video coming soon</p>
-                    <p className="text-13 text-slate">Testing Video — children playing Space Explorer at Nehru Planetarium</p>
-                  </div>
+                <div className="relative aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://player.vimeo.com/video/324906585?title=0&byline=0&portrait=0"
+                    className="absolute inset-0 w-full h-full"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title="Space Explorer — Testing Video"
+                  />
                 </div>
                 <p className="text-12 text-mist leading-[1.5]">Testing Video — children playing Space Explorer at Nehru Planetarium</p>
               </div>
