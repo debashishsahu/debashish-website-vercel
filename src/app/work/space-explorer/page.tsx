@@ -1109,7 +1109,7 @@ export default function SpaceExplorerPage() {
 
         <PrevNextNav
           prev={{ title: 'FlyDubai Holidays', descriptor: 'B2C · Imaginea Design', href: '/work/fzholidays' }}
-          next={{ title: 'Ezili',              descriptor: 'B2C · Mobile',           href: '/work/ezili' }}
+          next={{ title: 'Unaccompanied Minors', descriptor: 'IoT · Imaginea Design',  href: '/work/unaccompanied-minor' }}
         />
       </main>
       <Footer />

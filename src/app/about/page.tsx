@@ -1,83 +1,117 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionHeader from '@/components/SectionHeader'
 import TimelineEntry from '@/components/TimelineEntry'
+import FullWidthImage from '@/components/FullWidthImage'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About — Debashish Sahu',
   description:
-    'Sr. Staff Product Designer with 15+ years of experience — electronics tinkerer, gamer, traveller, and father to Arya.',
+    'Sr. Staff Product Designer at ServiceNow with 15+ years of experience. NID and ISB alumnus. Passionate about AI-powered enterprise products, design systems, and human-centred interaction design.',
+  openGraph: {
+    title: 'About — Debashish Sahu Portfolio',
+    description:
+      'Sr. Staff Product Designer at ServiceNow. NID · ISB · 15+ years designing enterprise and consumer products.',
+    images: ['/images/about/singapore-skyline.jpg'],
+  },
 }
 
 const workHistory = [
   {
-    date: 'Apr 2025 – Now',
+    date: 'April 2025 – Current',
     company: 'ServiceNow',
     role: 'Sr. Staff Product Designer',
     isCurrent: true,
-    description:
-      'Lead design across SPW and EAW flagship applications. Drive strategic UX vision, mentor design teams, and collaborate with engineering leadership to ship features used by thousands of enterprise customers globally.',
+    description: `As a Senior Staff Designer, I lead design efforts across multiple business units, spearheading two flagship applications: Strategic Planning Workspace (SPW) and Enterprise Architecture Workspace (EAW). These enterprise-level platforms require a deep understanding of complex user workflows, stakeholder needs, and organizational dynamics.
+
+Beyond individual contributor work, I play a pivotal role in building and nurturing our design team. I actively participate in hiring processes to bring in talented designers who align with our vision, and mentor new team members as they onboard and grow into their roles.
+
+Currently, I'm focused on designing the next generation of enterprise applications that leverage agentic AI and conversational experiences powered by AI.`,
   },
   {
-    date: 'May 2020 – Apr 2025',
+    date: 'May 2020 – April 2025',
     company: 'ServiceNow',
     role: 'Staff Product Designer',
-    description:
-      'Owned Portfolio Plans, Goals & Targets, Financials, and Resource Management features. Established design patterns and contributed to the Seismic design system. Delivered measurable improvements in task completion and adoption.',
+    isCurrent: false,
+    description: `As a Staff Designer, I focussed on designing crucial modules within the Strategic Planning Workspace (SPW), a comprehensive enterprise platform. My primary areas of ownership included Portfolio Plans, Goals & Targets Management, and Financials — each representing complex, data-intensive workflows that require careful balance between functionality and usability.
+
+One of my key contributions has been designing and maintaining a robust Data Grid component that has become a foundational element across the business unit. This component is extensively used across multiple modules and applications, making it critical that the design is both flexible enough to accommodate diverse use cases and consistent enough to provide a cohesive user experience.
+
+I actively contributed to growing our design team by participating in the hiring process. I help evaluate candidates, conduct interviews, and ensure we're bringing in designers who not only have strong skills but also align with our team culture and design philosophy.`,
   },
   {
-    date: 'Jul 2019 – May 2020',
-    company: 'Honeywell',
+    date: 'July 2019 – May 2020',
+    company: 'Honeywell Technology Solutions',
     role: 'Lead Interaction Designer',
-    description:
-      'Designed next-gen interactions for Forge Portal — Honeywell\'s enterprise IoT platform. Led research with field operators and translated insights into a redesigned dashboard and alerting experience.',
+    isCurrent: false,
+    description: `As a Lead Interaction Designer, Connected Buildings domain, wherein I am involved in designing next generation interactions for Forge Portal which is a unified software suite for all products under the umbrella.`,
   },
   {
-    date: 'Dec 2015 – Jul 2019',
-    company: 'Imaginea Design',
+    date: 'December 2015 – July 2019',
+    company: 'Imaginea Design Labs (Pramati Technologies Pvt. Ltd.)',
     role: 'Lead Interaction Designer',
-    description:
-      'Led UX for varied software and digital products across e-commerce, travel, retail, and IoT. Managed end-to-end design process from research through delivery, mentoring junior designers along the way.',
+    isCurrent: false,
+    description: `As a Lead Interaction Designer, a major portion of my work involves coming up with new and best experiences for the varied software or digital products in Imaginea Design and leading from the front.`,
   },
   {
-    date: 'Nov 2013 – Dec 2015',
-    company: 'Mindtree',
-    role: 'UX Designer',
-    description:
-      'IoT, AR/VR, and gesture-based PoCs at Digital Pumpkin innovation lab. Rapid prototyping of novel interaction paradigms including the award-winning Space Explorer and Shadow Eaters installations.',
+    date: 'November 2013 – December 2015',
+    company: 'Mindtree Ltd. (now LTI Mindtree)',
+    role: 'User Experience Designer',
+    isCurrent: false,
+    description: `Worked as Interaction Designer/User Experience Designer in a co-innovation lab called The Digital Pumpkin.
+
+The Digital Pumpkin was a CoE of the upcoming technology — be it Tangible Media, IoT, gesture based devices, AR/VR etc. The idea was to create a working showcase of products and solutions which could link experience, end-users and business together.
+
+Majorly worked on interaction and UX of all the PoC & prototypes which were built under the banner.`,
   },
   {
-    date: 'Jul 2010 – Jun 2011',
-    company: 'Nagarro',
+    date: 'July 2010 – June 2011',
+    company: 'Nagarro Softwares Pvt. Ltd.',
     role: 'Senior Software Engineer',
-    description:
-      'Developed SharePoint web portals, master pages, and custom web parts for enterprise clients. This engineering foundation later became integral to my design thinking and developer collaboration approach.',
+    isCurrent: false,
+    description: `Design and Development of SharePoint Web Portals.
+
+Worked as a Senior Software Engineer, Member Delivery Group in developing Web based applications in Microsoft Technologies in MOSS 2007 and SharePoint Server 2010. The task mainly involved customization of master pages, design and development of custom webparts, site templates, page templates etc.`,
+  },
+  {
+    date: 'November 2007 – April 2010',
+    company: 'L&T Infotech',
+    role: 'Software Engineer',
+    isCurrent: false,
+    description: `Design and Development of SharePoint Web Portals.
+
+Worked as a Software Engineer in the Team which worked exclusively on the various internet and intranet webportals for Viacom Inc., MTV, Paramount Pictures.`,
   },
 ]
 
 const education = [
   {
-    date: '2020–2022',
-    company: 'ISB',
-    role: 'PGPPro — Indian School of Business',
-    description:
-      'Post Graduate Programme for Professionals. Developed strategic business acumen, leadership skills, and a frameworks-based approach to problem solving in complex organisational contexts.',
+    date: '2020 – 2022',
+    company: 'Indian School of Business',
+    role: 'PGPPro',
+    isCurrent: false,
+    description: `I further enhanced my professional capabilities by completing the PGPPro (Post Graduate Programme for Professionals) from the Indian School of Business (ISB).
+
+This program provided me with strategic business acumen and leadership skills, helping me understand the broader organizational context in which design decisions are made. It strengthened my ability to align design initiatives with business objectives and communicate effectively with cross-functional stakeholders.`,
   },
   {
-    date: '2011–2013',
-    company: 'NID Ahmedabad',
+    date: '2011 – 2013',
+    company: 'National Institute of Design',
     role: 'PGDPD — New Media Design',
-    description:
-      'Trans-disciplinary programme blending design, art, science and technology at India\'s premier design institution. Graduated with multiple award-winning projects including OZCHI paper acceptance.',
+    isCurrent: false,
+    description: `My foundation in design was shaped by the New Media Design Program, a trans-disciplinary curriculum that seamlessly blended design, art, science, and technology.
+
+This unique approach taught me to integrate knowledge across various disciplines, moving beyond siloed thinking to create holistic solutions. It was here that I learned to bridge the gap between creative vision and technical implementation — a skill that continues to define my work today.`,
   },
   {
-    date: '2007–2011',
-    company: "Lingaya's Institute",
-    role: 'B.Tech — Computer Science',
-    description:
-      'Foundation in software development, data structures, algorithms, and systems thinking. Dual background in CS and design is a defining strength of my design approach.',
+    date: '2004 – 2007',
+    company: "Lingaya's Institute of Mgmt. & Tech.",
+    role: 'B.Tech — Computer Science & Engineering',
+    isCurrent: false,
+    description: `I completed my B.E. in Computer Science from Lingaya's Institute of Technology, affiliated to Maharishi Dayanand University, Rohtak.
+
+This technical foundation gave me a strong understanding of software development, systems thinking, and problem-solving — skills that would later prove invaluable in my design career.`,
   },
 ]
 
@@ -86,127 +120,65 @@ export default function AboutPage() {
     <>
       <Navbar />
       <main>
+
         {/* Hero image */}
-        <div className="relative w-full aspect-[16/5] overflow-hidden">
-          <Image
-            src="/images/about/singapore_skyline.jpg"
-            alt="Singapore skyline at dusk"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-ink/30" />
+        <div className="px-page-sm md:px-page-md lg:px-page pt-8">
+          <div className="max-w-content mx-auto">
+            <FullWidthImage
+              src="/images/about/singapore-skyline.jpg"
+              alt="Singapore skyline — Marina Bay Sands in the background"
+              aspectRatio="wide"
+              objectFit="cover"
+              objectPosition="center 55%"
+            />
+          </div>
         </div>
 
         {/* Personal intro */}
-        <section className="px-page-sm md:px-page-md lg:px-page py-12 border-b border-linen">
+        <section className="px-page-sm md:px-page-md lg:px-page py-[60px]">
           <div className="max-w-content mx-auto">
-            <h2 className="font-display text-32 font-medium text-ink tracking-tighter mb-6">
+            <h2 className="font-display text-[32px] md:text-[28px] font-medium text-ink tracking-tighter leading-[1.15] mb-8">
               👋 Hi, I&apos;m Debashish.
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[880px]">
-              <p className="text-16 text-slate leading-[1.75]">
-                I&apos;m a Sr. Staff Product Designer based in Singapore, currently leading design
-                at ServiceNow. I&apos;ve spent the last 15+ years obsessing over how people interact
-                with complex systems — enterprise software, IoT devices, kiosks, gesture interfaces,
-                and everything in between.
+            <div className="max-w-[720px] space-y-6 text-16 text-slate leading-[1.75]">
+              <p>
+                I&apos;m passionate about tinkering with electronics — Raspberry Pi, BeagleBone
+                boards, and Arduino are my go-to tools for weekend projects. I&apos;m also an
+                avid gamer who&apos;s completed the Lara Croft series, Prince of Persia series,
+                and multiple Need for Speed titles over the years.
               </p>
-              <p className="text-16 text-slate leading-[1.75]">
-                Outside of design, I&apos;m an electronics tinkerer who builds stuff with Raspberry
-                Pi and Arduino, a gamer who loves story-driven RPGs, and an avid traveller with
-                Singapore as my home base. Most importantly, I&apos;m a father to Arya, who reminds
-                me every day that the best interfaces are the ones that feel like magic.
+              <p>
+                I&apos;m also experiencing the joy of growing up all over again with my 5-year-old
+                daughter, Arya. She&apos;s given me a fresh perspective on the world and reminded
+                me to find wonder in the everyday.
+              </p>
+              <p>
+                When I&apos;m not at the gym or binging TV shows and movies, I&apos;m exploring the
+                world. I&apos;ve traveled to the US, Dubai, Bali, Singapore, Azerbaijan, Vietnam,
+                and more, with plans to tick off many more countries and cities across the
+                globe. Whether it&apos;s a planned holiday or a spontaneous weekend road trip
+                closer to home, I&apos;m always ready for the next adventure.
               </p>
             </div>
           </div>
         </section>
 
         {/* Professional Journey */}
-        <section className="px-page-sm md:px-page-md lg:px-page pb-section">
+        <section className="px-page-sm md:px-page-md lg:px-page pb-[80px]">
           <div className="max-w-content mx-auto">
             <SectionHeader variant="A" title="Professional Journey" />
-            <div className="pl-[17px]">
-              <TimelineEntry entries={workHistory} />
-            </div>
+            <TimelineEntry entries={workHistory} />
           </div>
         </section>
 
-        {/* Education */}
-        <section className="bg-linen/20 border-t border-linen px-page-sm md:px-page-md lg:px-page py-section-sm md:py-section-md pb-section">
+        {/* Educational Details */}
+        <section className="px-page-sm md:px-page-md lg:px-page pb-[80px]">
           <div className="max-w-content mx-auto">
-            <SectionHeader variant="A" title="Education" />
-            <div className="pl-[17px]">
-              <TimelineEntry entries={education} />
-            </div>
+            <SectionHeader variant="A" title="Educational Details" />
+            <TimelineEntry entries={education} />
           </div>
         </section>
 
-        {/* Skills */}
-        <section className="px-page-sm md:px-page-md lg:px-page pb-section">
-          <div className="max-w-content mx-auto">
-            <SectionHeader variant="A" title="Skills & Tools" />
-            <div className="pl-[17px] grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  label: 'Design',
-                  skills: [
-                    'UX / Product Design',
-                    'Interaction Design',
-                    'Design Systems',
-                    'User Research',
-                    'Information Architecture',
-                    'Prototyping',
-                    'Visual Design',
-                    'Service Design',
-                  ],
-                },
-                {
-                  label: 'Tools',
-                  skills: [
-                    'Figma',
-                    'FigJam',
-                    'Framer',
-                    'Maze / UserTesting',
-                    'Miro',
-                    'Zeplin',
-                    'Adobe XD',
-                    'Principle',
-                  ],
-                },
-                {
-                  label: 'Domain',
-                  skills: [
-                    'Enterprise Software',
-                    'IoT & Devices',
-                    'E-commerce & Travel',
-                    'AI-powered Features',
-                    'Accessibility (WCAG)',
-                    'Kiosk / Touch Interfaces',
-                    'B2B SaaS',
-                    'Mobile Apps',
-                  ],
-                },
-              ].map((group) => (
-                <div key={group.label}>
-                  <p className="text-12 font-medium uppercase tracking-label text-amber mb-4">
-                    {group.label}
-                  </p>
-                  <ul className="flex flex-col gap-2">
-                    {group.skills.map((skill) => (
-                      <li
-                        key={skill}
-                        className="flex items-center gap-2.5 text-14 text-ink"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber flex-shrink-0" />
-                        {skill}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

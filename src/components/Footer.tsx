@@ -51,22 +51,21 @@ export default function Footer() {
             {/* Left: copy */}
             <div className="flex-1 max-w-[520px]">
               <p className="text-12 font-medium uppercase tracking-label text-amber mb-4">
-                Let&apos;s work together
+                Get in touch
               </p>
-              <h2 className="font-display text-[36px] font-medium text-canvas tracking-tighter leading-[1.1] mb-5">
-                Got a project in mind?<br />I&apos;d love to hear about it.
+              <h2 className="font-display text-[36px] md:text-[28px] font-medium text-canvas tracking-tighter leading-[1.1] mb-5">
+                Let&apos;s have a good conversation.
               </h2>
               <p className="text-16 font-light text-mist leading-[1.7] mb-8">
-                I&apos;m currently open to senior design roles and consulting engagements.
-                Whether it&apos;s a complex enterprise system or a consumer product, let&apos;s
-                create something meaningful together.
+                Design craft, interesting problems, or something you&apos;re building —
+                I&apos;m always up for a good conversation. Reach out anytime.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="mailto:debashishsahu@outlook.com"
                   className="inline-flex items-center justify-center bg-amber-bright text-ink text-13 font-medium px-6 py-3 rounded-md hover:opacity-90 transition-opacity"
                 >
-                  Say hello →
+                  Say hello ↗
                 </a>
                 <a
                   href="/resume/resume.pdf"

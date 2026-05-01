@@ -76,7 +76,22 @@
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_878971d890fa443f93fc1b8b04a64a2a~mv2_d_1752_1237_s_2.jpg\" -o \"sensit-flyer-02.jpg\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_e3a90e72c1d44b798548d74cbd5d5dc4~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/unaccompanied-minor/hero.png\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_36e2e5d078df46e8a9b6bbc2c0ecaec0~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/smart-companion/hero.png\")",
-      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_9c4841c3bd8844bfbf3cb03d76750a4b~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/touch-retail/hero.png\")"
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_9c4841c3bd8844bfbf3cb03d76750a4b~mv2.png\" -o \"D:/Claude/debashish-website-vercel/public/images/touch-retail/hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_2d39c8c82f5143e4bb516cdcf365c7f3~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\vox\\\\hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_f32fb1fb97ba4e92805b4e3e55aeca92~mv2_d_3872_2592_s_4_2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\shadow-eaters\\\\shadow-01.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_ad242f2140964040a49dcb44b36bb854~mv2_d_3872_2592_s_4_2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\shadow-eaters\\\\shadow-02.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_1a1f149c7b1e4a01bf26d85b45199e1b~mv2_d_2592_3872_s_4_2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\shadow-eaters\\\\shadow-03.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_358c89b845854639a58bfe012e3d1449~mv2_d_3872_2592_s_4_2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\shadow-eaters\\\\shadow-04.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_a0e2fdeeb82c43beb9cc1b80589b70ee~mv2_d_2592_3872_s_4_2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\shadow-eaters\\\\shadow-05.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_50c36fdbaf4b4b9ebecc61fe533c1810~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\ozchi-paper\\\\hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_5c1501fb08d54337aeed5ca1b6dd9da9~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_6f56f08ba5824726993e7366815e1df9~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\prototype-01.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_08d1403fd8d843d89aebb115e243ac50~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\prototype-02.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_cf673f87af70452686cc6232bd5ff3ae~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\prototype-03.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_74133bc9024e420ab56777f4d3d7344c~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\prototype-04.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_a9d3ba26270a4bc5abba972511df5463~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\soundscape-bitten\\\\hero.png\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_b76eea3182784c54ae0f32fa3c0f8aa8~mv2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\about\\\\singapore-skyline.jpg\")",
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_3b79b8358b524fd99e44b8c8f77e23a2~mv2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\home\\\\debashish-profile.jpg\")"
     ]
   }
 }

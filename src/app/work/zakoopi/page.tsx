@@ -305,7 +305,7 @@ export default function ZakoopPage() {
 
         <PrevNextNav
           prev={{ title: 'Context Smart Companion', descriptor: 'Mobile · L&T Infotech',    href: '/work/smart-companion' }}
-          next={{ title: 'Campaign Management System', descriptor: 'Enterprise · IMImobile', href: '/work/imicampaign' }}
+          next={{ title: 'Shadow Eaters',              descriptor: 'Interactive Installation · NID', href: '/work/shadow-eaters' }}
         />
       </main>
       <Footer />

@@ -8,6 +8,7 @@ interface FullWidthImageProps {
   caption?: string
   aspectRatio?: AspectRatio
   objectFit?: 'cover' | 'contain' | 'natural'
+  objectPosition?: string
 }
 
 const aspectClasses: Record<AspectRatio, string> = {
@@ -23,6 +24,7 @@ export default function FullWidthImage({
   caption,
   aspectRatio = 'wide',
   objectFit = 'cover',
+  objectPosition = 'center',
 }: FullWidthImageProps) {
   return (
     <figure className="my-8">
@@ -45,6 +47,7 @@ export default function FullWidthImage({
             alt={alt}
             fill
             className={objectFit === 'contain' ? 'object-contain' : 'object-cover'}
+            style={{ objectPosition }}
             loading="lazy"
           />
         </div>

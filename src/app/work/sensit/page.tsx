@@ -138,7 +138,7 @@ export default function SensitPage() {
         </article>
 
         <PrevNextNav
-          prev={{ title: 'Ezili',                  descriptor: 'B2C · Imaginea Design',  href: '/work/ezili' }}
+          prev={{ title: 'Touch Kiosk for Retail',  descriptor: 'Retail · Imaginea Design', href: '/work/touch-retail' }}
           next={{ title: 'Unaccompanied Minors',    descriptor: 'IoT · Imaginea Design',   href: '/work/unaccompanied-minor' }}
         />
       </main>

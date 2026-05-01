@@ -52,8 +52,10 @@ export default function TimelineEntry({ entries }: TimelineEntryProps) {
               {/* Content */}
               <div className="md:pl-8 flex-1">
                 <h3 className="text-18 font-medium text-ink tracking-snug mb-0.5">{entry.role}</h3>
-                <p className="text-13 font-medium text-slate mb-2.5">{entry.company}</p>
-                <p className="text-14 text-slate leading-[1.7]">{entry.description}</p>
+                <p className="text-14 font-semibold text-ink mb-2.5">{entry.company}</p>
+                {entry.description.split('\n\n').map((para, j) => (
+                  <p key={j} className={`text-14 text-slate leading-[1.7] ${j > 0 ? 'mt-3' : ''}`}>{para.trim()}</p>
+                ))}
               </div>
             </div>
           </FadeUp>

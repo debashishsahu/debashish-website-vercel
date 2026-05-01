@@ -103,27 +103,10 @@ export const projects: Project[] = [
       'A gesture-based game for Nehru Planetarium that transforms museum learning into interactive play.',
     tier: 'key',
     prev: 'fzholidays',
-    next: 'ezili',
+    next: 'unaccompanied-minor',
   },
 
   // OTHER PROJECTS
-  {
-    slug: 'ezili',
-    cardImage: '/images/work/ezili-card.png',
-    title: 'Ezili — Shopping App',
-    client: 'Imaginea Design',
-    category: 'B2C · Mobile',
-    duration: 'N/A',
-    period: '2016',
-    team: 'Internal',
-    role: 'Interaction Design',
-    tags: ['B2C', 'Mobile'],
-    descriptor:
-      'A shopping app reconceptualised around note-making and discovery behaviour.',
-    tier: 'other',
-    prev: 'space-explorer',
-    next: 'unaccompanied-minor',
-  },
   {
     slug: 'unaccompanied-minor',
     cardImage: '/images/work/unaccompanied-minor-card.png',
@@ -138,7 +121,7 @@ export const projects: Project[] = [
     descriptor:
       'An IoT-based solution for the challenges of children travelling solo.',
     tier: 'other',
-    prev: 'ezili',
+    prev: 'space-explorer',
     next: 'touch-retail',
   },
   {
@@ -207,27 +190,10 @@ export const projects: Project[] = [
       'A local search engine and comprehensive database for finding designers, boutiques and tailors.',
     tier: 'other',
     prev: 'smart-companion',
-    next: 'vox',
+    next: 'shadow-eaters',
   },
 
   // SIDE PROJECTS
-  {
-    slug: 'vox',
-    cardImage: '/images/work/vox-card.png',
-    title: 'VOX',
-    client: 'Mindtree / NID',
-    category: 'Physical Product · IoT',
-    duration: 'N/A',
-    period: '2014',
-    team: 'Internal',
-    role: 'Interaction Design',
-    tags: ['Physical', 'IoT'],
-    descriptor:
-      'A physical multi-lingual speech conversion device — VOX Ear and VOX Jacket.',
-    tier: 'side',
-    prev: 'zakoopi',
-    next: 'shadow-eaters',
-  },
   {
     slug: 'shadow-eaters',
     cardImage: '/images/work/shadow-eaters-card.png',
@@ -242,7 +208,7 @@ export const projects: Project[] = [
     descriptor:
       'An interactive installation translating Japanese folklore of decay into a digital shadow-consuming swarm.',
     tier: 'side',
-    prev: 'vox',
+    prev: 'zakoopi',
     next: 'ozchi-paper',
   },
   {

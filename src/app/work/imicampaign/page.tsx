@@ -552,7 +552,7 @@ export default function IMICampaignPage() {
         </article>
 
         <PrevNextNav
-          prev={{ title: 'Customs Clearance', descriptor: 'Enterprise · Agility Logistics', href: '/work/customs-clearance' }}
+          prev={{ title: 'Bitten — Soundscape', descriptor: 'Sound Design · NID',           href: '/work/soundscape-bitten' }}
           next={{ title: 'FlyDubai Holidays',  descriptor: 'B2C · Imaginea Design',         href: '/work/fzholidays' }}
         />
       </main>
