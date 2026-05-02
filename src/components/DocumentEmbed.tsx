@@ -86,8 +86,8 @@ function PdfViewer({ url, ready }: { url: string; ready: boolean }) {
               className="px-2 py-1 text-amber hover:bg-linen/60 disabled:text-linen disabled:cursor-not-allowed transition-colors border-r border-linen"
               aria-label="Previous page"
             >
-              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 11L5 7l4-4" />
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 6L9 12L15 18" />
               </svg>
             </button>
             <span className="px-2.5 text-12 text-slate whitespace-nowrap select-none">
@@ -99,8 +99,8 @@ function PdfViewer({ url, ready }: { url: string; ready: boolean }) {
               className="px-2 py-1 text-amber hover:bg-linen/60 disabled:text-linen disabled:cursor-not-allowed transition-colors border-l border-linen"
               aria-label="Next page"
             >
-              <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 3l4 4-4 4" />
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 6L15 12L9 18" />
               </svg>
             </button>
           </div>

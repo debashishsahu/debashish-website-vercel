@@ -99,8 +99,9 @@ export default function ProjectCard({ variant, image, title, description, tags, 
             <p className="text-13 text-slate leading-[1.6] mb-3.5 flex-1">{description}</p>
             <div className="flex items-center justify-between">
               <span className="text-12 text-mist">{meta}</span>
-              <motion.span className="text-12 font-medium text-amber" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
-                View case study →
+              <motion.span className="inline-flex items-center gap-1.5 text-12 font-medium text-amber" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+                View case study
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
               </motion.span>
             </div>
           </div>

@@ -274,7 +274,9 @@ export default function ImageGroup({ variant, images = [], before, after, label,
               <p className="text-12 text-mist mt-2 pl-1">{img.caption}</p>
             )}
             {i < images.length - 1 && (
-              <div className="flex justify-center py-3 text-amber text-20 font-medium">↓</div>
+              <div className="flex justify-center py-3 text-amber">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3L12 21M12 21L20.5 12.5M12 21L3.5 12.5" /></svg>
+              </div>
             )}
           </div>
         ))}

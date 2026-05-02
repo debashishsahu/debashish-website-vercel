@@ -91,7 +91,11 @@
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_74133bc9024e420ab56777f4d3d7344c~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\drawing-canvas\\\\prototype-04.png\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_a9d3ba26270a4bc5abba972511df5463~mv2.png\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\soundscape-bitten\\\\hero.png\")",
       "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_b76eea3182784c54ae0f32fa3c0f8aa8~mv2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\about\\\\singapore-skyline.jpg\")",
-      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_3b79b8358b524fd99e44b8c8f77e23a2~mv2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\home\\\\debashish-profile.jpg\")"
+      "Bash(curl -L \"https://static.wixstatic.com/media/c24e7f_3b79b8358b524fd99e44b8c8f77e23a2~mv2.jpg\" -o \"D:\\\\Claude\\\\debashish-website-vercel\\\\public\\\\images\\\\home\\\\debashish-profile.jpg\")",
+      "WebFetch(domain:iconoir.com)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:cdn.jsdelivr.net)"
     ]
   }
 }

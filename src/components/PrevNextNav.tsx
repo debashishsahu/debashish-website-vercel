@@ -40,7 +40,7 @@ export default function PrevNextNav({ prev, next }: PrevNextNavProps) {
                   transition={{ duration: 0.2 }}
                 >
                   <span className="text-12 font-medium uppercase tracking-label text-mist mb-1.5">
-                    ← Previous project
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block mr-1.5"><path d="M21 12L3 12M3 12L11.5 3.5M3 12L11.5 20.5" /></svg>Previous project
                   </span>
                   <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5">
                     {prev.title}
@@ -81,7 +81,7 @@ export default function PrevNextNav({ prev, next }: PrevNextNavProps) {
                   transition={{ duration: 0.2 }}
                 >
                   <span className="text-12 font-medium uppercase tracking-label text-mist mb-1.5">
-                    Next project →
+                    Next project<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="inline-block ml-1.5"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
                   </span>
                   <span className="font-display text-18 md:text-22 font-medium text-ink tracking-snug mt-1.5 text-right">
                     {next.title}

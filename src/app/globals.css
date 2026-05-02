@@ -9,6 +9,7 @@
     background-color: #F7F5F2;
     color: #1A2530;
     font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
   }
 
   body {
