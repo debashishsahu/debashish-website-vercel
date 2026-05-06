@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { tagColors } from '@/data/projects'
+import { viewport } from '@/lib/animations'
 
 interface ProjectCardProps {
   variant: 'featured' | 'standard'
@@ -69,8 +70,11 @@ export default function ProjectCard({ variant, image, title, description, tags, 
       <Link href={href} className="group block h-full">
         <motion.div
           className="flex flex-col border border-linen rounded-xl overflow-hidden bg-white/40 h-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewport}
           whileHover={{ borderColor: '#D4882A', y: -4 }}
-          transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: '450 / 316' }}>
             {image ? (
@@ -114,8 +118,11 @@ export default function ProjectCard({ variant, image, title, description, tags, 
     <Link href={href} className="group block h-full">
       <motion.div
         className="flex flex-col border border-linen rounded-xl overflow-hidden bg-white/40 h-full"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={viewport}
         whileHover={{ borderColor: '#D4882A', y: -3 }}
-        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: '378 / 266' }}>
           {image ? (

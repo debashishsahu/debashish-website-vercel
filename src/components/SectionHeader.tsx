@@ -1,3 +1,8 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { barGrow, fadeUp, staggerContainer, viewport } from '@/lib/animations'
+
 interface SectionHeaderProps {
   variant?: 'A' | 'B' | 'C'
   eyebrow?: string
@@ -14,27 +19,36 @@ export default function SectionHeader({
   className = '',
 }: SectionHeaderProps) {
   return (
-    <div className={`mt-section-sm md:mt-section-md lg:mt-section mb-6 ${className}`}>
+    <motion.div
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      className={`mt-section-sm md:mt-section-md lg:mt-section mb-6 ${className}`}
+    >
       <div className="flex items-stretch gap-3.5">
-        {/* Amber accent bar */}
-        <div className="w-[3px] bg-amber rounded-sm self-stretch flex-shrink-0" />
+        {/* Amber accent bar — grows from top */}
+        <motion.div
+          variants={barGrow}
+          className="w-[3px] bg-amber rounded-sm self-stretch flex-shrink-0"
+        />
 
         <div className="pl-[17px]">
           {(variant === 'B' || eyebrow) && (
-            <p className="text-12 font-medium uppercase tracking-label text-amber mb-2">
+            <motion.p variants={fadeUp} className="text-12 font-medium uppercase tracking-label text-amber mb-2">
               {eyebrow}
-            </p>
+            </motion.p>
           )}
-          <h2 className="font-sans text-26 md:text-[28px] lg:text-32 font-medium text-ink tracking-tighter">
+          <motion.h2 variants={fadeUp} className="font-sans text-26 md:text-[28px] lg:text-32 font-medium text-ink tracking-tighter">
             {title}
-          </h2>
+          </motion.h2>
           {(variant === 'C' || subtitle) && subtitle && (
-            <p className="text-18 font-light text-slate mt-2.5 max-w-[640px]">
+            <motion.p variants={fadeUp} className="text-18 font-light text-slate mt-2.5 max-w-[640px]">
               {subtitle}
-            </p>
+            </motion.p>
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

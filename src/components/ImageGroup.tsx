@@ -259,7 +259,7 @@ export default function ImageGroup({ variant, images = [], before, after, label,
       <div className="flex flex-col gap-4 my-8">
         {images.map((img, i) => (
           <div key={i}>
-            <div className="rounded-md overflow-hidden bg-[#F5F4F0]">
+            <div className="rounded-md overflow-hidden bg-bg-surface">
               <Image
                 src={img.src}
                 alt={img.alt ?? img.caption ?? ''}

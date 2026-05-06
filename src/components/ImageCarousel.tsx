@@ -56,7 +56,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
         @keyframes cs-push-out-right { from { transform:translateX(0);     } to { transform:translateX(100%);  } }
       `}</style>
 
-      <div className="relative rounded-xl overflow-hidden bg-[#F5F4F0] group">
+      <div className="relative rounded-xl overflow-hidden bg-bg-surface group">
 
         {/* ── Exiting image — absolute, pushed out in direction ── */}
         {exiting !== null && (

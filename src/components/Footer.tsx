@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const socialLinks = [
   {
@@ -57,13 +60,16 @@ export default function Footer() {
                 I&apos;m always up for a good conversation. Reach out anytime.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <a
+                <motion.a
                   href="mailto:debashishsahu@outlook.com"
-                  className="inline-flex items-center justify-center bg-amber-bright text-ink text-13 font-medium px-6 py-3 rounded-md hover:opacity-90 transition-opacity"
+                  whileHover={{ boxShadow: '0 0 24px rgba(212, 136, 42, 0.45)', scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+                  className="inline-flex items-center justify-center gap-2 bg-amber-bright text-ink text-13 font-medium px-6 py-3 rounded-md"
                 >
                   Say hello
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6.00005 19L19 5.99996M19 5.99996V18.48M19 5.99996H6.52005" /></svg>
-                </a>
+                </motion.a>
                 <a
                   href="/resume/resume.pdf"
                   target="_blank"

@@ -119,7 +119,7 @@ export default function MediaTextCard(props: MediaTextCardProps) {
   if (props.variant === 'concept') {
     return (
       <div className={`border rounded-xl overflow-hidden ${props.isChosen ? 'border-amber' : 'border-linen'}`}>
-        <div className="bg-[#F5F4F0]">
+        <div className="bg-bg-surface">
           <Image
             src={props.image}
             alt={props.title}

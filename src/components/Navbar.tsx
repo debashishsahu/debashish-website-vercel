@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ThemeSwitcher from '@/components/ThemeSwitcher'
+import OwlLogo from '@/components/OwlLogo'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -29,24 +31,39 @@ export default function Navbar() {
   return (
     <motion.nav
       aria-label="Main navigation"
-      className="sticky top-0 z-50 border-b border-linen bg-canvas"
+      className="sticky top-0 z-50 border-b border-linen"
+      style={{
+        backgroundColor: scrolled
+          ? `rgba(var(--bg-rgb), 0.88)`
+          : `rgba(var(--bg-rgb), 1)`,
+      }}
       animate={{
         height: scrolled ? 58 : 64,
         backdropFilter: scrolled ? 'blur(8px)' : 'blur(0px)',
-        backgroundColor: scrolled ? 'rgba(247,245,242,0.88)' : 'rgba(247,245,242,1)',
       }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="max-w-content mx-auto px-page-sm md:px-page-md lg:px-page h-full flex items-center justify-between">
         {/* Logo */}
-        <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-          <Link
-            href="/"
-            className="font-display text-18 font-medium text-ink tracking-snug hover:text-amber transition-colors"
+        <Link
+          href="/"
+          className="flex items-center gap-2 group"
+          aria-label="Debashish Sahu — Home"
+        >
+          <motion.div
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            className="flex-shrink-0"
+          >
+            <OwlLogo size={24} />
+          </motion.div>
+          <span
+            className="font-display font-medium text-ink tracking-[-0.01em] text-[16px] md:text-[15px] hidden sm:block transition-colors duration-200 group-hover:text-amber"
           >
             Debashish Sahu
-          </Link>
-        </motion.div>
+          </span>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -83,6 +100,9 @@ export default function Navbar() {
           >
             Resume
           </motion.a>
+
+          <div className="w-px h-4 bg-linen" />
+          <ThemeSwitcher />
         </div>
 
         {/* Mobile hamburger */}
@@ -146,6 +166,10 @@ export default function Navbar() {
               >
                 Resume
               </a>
+            </div>
+            <div className="px-5 py-4 border-t border-linen flex items-center justify-between">
+              <span className="text-12 text-mist uppercase tracking-label font-medium">Theme</span>
+              <ThemeSwitcher />
             </div>
           </motion.div>
         )}

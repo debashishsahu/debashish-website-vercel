@@ -95,7 +95,19 @@
       "WebFetch(domain:iconoir.com)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "WebFetch(domain:cdn.jsdelivr.net)"
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "Bash(findstr /i \"lucide\")",
+      "Bash(Remove-Item -Recurse -Force \"D:\\\\Claude\\\\debashish-website-vercel\\\\.next\")",
+      "Bash(Write-Output \"done\")",
+      "Bash(node scripts/generate-favicons.mjs)",
+      "PowerShell($content = [System.IO.File]::ReadAllText\\(\"D:\\\\Claude\\\\debashish-website-vercel\\\\temp_page.html\"\\); $pattern = [regex]::new\\('\"uri\":\"\\(c24e7f_[^\"]+\\)\"'\\); $ms = $pattern.Matches\\($content\\); \"Match count: \" + $ms.Count | Out-File \"D:\\\\Claude\\\\debashish-website-vercel\\\\temp_uris.txt\"; foreach \\($m in $ms\\) { $m.Groups[1].Value | Out-File \"D:\\\\Claude\\\\debashish-website-vercel\\\\temp_uris.txt\" -Append }; \"Done: $\\($ms.Count\\) matches\")",
+      "PowerShell($content = [System.IO.File]::ReadAllText\\(\"D:\\\\Claude\\\\debashish-website-vercel\\\\temp_page.html\"\\); # Try escaped quotes since this is HTML-embedded JSON $pattern = [regex]::new\\('&quot;uri&quot;:&quot;\\(c24e7f_[^&]+\\)&quot;'\\); $ms = $pattern.Matches\\($content\\); \"Match count: \" + $ms.Count; if \\($ms.Count -gt 0\\) { $ms | ForEach-Object { $_.Groups[1].Value } } | Out-File \"D:\\\\Claude\\\\debashish-website-vercel\\\\temp_uris.txt\"; \"Done\")",
+      "Bash(curl -s -L --max-time 20 -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://www.debashishsahu.co.in/imicampaign\")",
+      "Bash(curl -s -L --max-time 20 \"https://www.debashishsahu.co.in/imicampaign\")",
+      "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) scripts = re.findall\\(r'<script[^>]*>\\(.*?\\)</script>', content, re.DOTALL\\) print\\('Total scripts:', len\\(scripts\\)\\) for i,s in enumerate\\(scripts\\): if 'c24e7f_' in s: print\\(f'Script {i} has c24e7f_, len={len\\(s\\)}: {s[:200]}'\\) \")",
+      "Bash(python3 find_gallery.py)",
+      "WebFetch(domain:siteassets.parastorage.com)",
+      "Bash(grep -o '\"imicampaign\".\\\\{0,200\\\\}' \"D:/Claude/debashish-website-vercel/temp_page2.html\")"
     ]
   }
 }

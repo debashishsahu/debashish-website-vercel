@@ -4,17 +4,86 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Sand (default) ── */
+:root,
+[data-theme='sand'] {
+  --bg:             #F7F5F2;
+  --bg-rgb:         247, 245, 242;
+  --bg-secondary:   #F0EDE8;
+  --bg-card:        #FFFFFF;
+  --bg-surface:     #F5F4F0;
+  --text-primary:   #1A2530;
+  --text-secondary: #5C6B7A;
+  --text-muted:     #8FA0AE;
+  --border:         #E4DDD5;
+  --accent:         #D4882A;
+  --accent-bright:  #E8943A;
+  --footer-upper:   #1A2530;
+  --footer-lower:   #111B24;
+}
+
+/* ── Light ── */
+[data-theme='light'] {
+  --bg:             #FFFFFF;
+  --bg-rgb:         255, 255, 255;
+  --bg-secondary:   #F5F5F5;
+  --bg-card:        #FFFFFF;
+  --bg-surface:     #F0F0F0;
+  --text-primary:   #0A0A0A;
+  --text-secondary: #444444;
+  --text-muted:     #888888;
+  --border:         #E8E8E8;
+  --accent:         #D4882A;
+  --accent-bright:  #E8943A;
+  --footer-upper:   #1A2530;
+  --footer-lower:   #111B24;
+}
+
+/* ── Midnight ── */
+[data-theme='midnight'] {
+  --bg:             #0F1923;
+  --bg-rgb:         15, 25, 35;
+  --bg-secondary:   #162130;
+  --bg-card:        #162130;
+  --bg-surface:     #1E2D3D;
+  --text-primary:   #F0EDE8;
+  --text-secondary: #8FA0AE;
+  --text-muted:     #4A6070;
+  --border:         #1E2D3D;
+  --accent:         #D4882A;
+  --accent-bright:  #E8943A;
+  --footer-upper:   #080E14;
+  --footer-lower:   #04080C;
+}
+
+/* ── Smooth theme colour transitions ── */
+*,
+*::before,
+*::after {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+/* Elements that must NOT colour-transition (motion-controlled or instant) */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
 @layer base {
   html {
-    background-color: #F7F5F2;
-    color: #1A2530;
+    background-color: var(--bg);
+    color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
     scroll-behavior: smooth;
   }
 
   body {
-    background-color: #F7F5F2;
-    color: #1A2530;
+    background-color: var(--bg);
+    color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

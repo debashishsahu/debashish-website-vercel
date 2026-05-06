@@ -62,15 +62,15 @@ function PdfViewer({ url, ready }: { url: string; ready: boolean }) {
   const next = () => setCurrentPage(p => Math.min(numPages, p + 1))
 
   return (
-    <div className="rounded-lg overflow-hidden border border-linen bg-[#F5F4F0]">
+    <div className="rounded-lg overflow-hidden border border-linen bg-bg-surface">
       {/* Canvas — PDF.js writes here */}
-      <div className="relative bg-[#F5F4F0]">
+      <div className="relative bg-bg-surface">
         <canvas
           ref={canvasRef}
           style={{ width: '100%', display: 'block' }}
         />
         {loading && (
-          <div className="absolute inset-0 flex items-center justify-center bg-[#F5F4F0]" style={{ minHeight: '480px' }}>
+          <div className="absolute inset-0 flex items-center justify-center bg-bg-surface" style={{ minHeight: '480px' }}>
             <p className="text-12 text-mist tracking-wide">Loading document…</p>
           </div>
         )}

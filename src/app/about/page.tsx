@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionHeader from '@/components/SectionHeader'
 import TimelineEntry from '@/components/TimelineEntry'
-import FullWidthImage from '@/components/FullWidthImage'
+import ParallaxHero from '@/components/ParallaxHero'
 
 export const metadata: Metadata = {
   title: 'About — Debashish Sahu',
@@ -121,14 +121,12 @@ export default function AboutPage() {
       <Navbar />
       <main>
 
-        {/* Hero image */}
+        {/* Hero image — parallax */}
         <div className="px-page-sm md:px-page-md lg:px-page pt-8">
           <div className="max-w-content mx-auto">
-            <FullWidthImage
+            <ParallaxHero
               src="/images/about/singapore-skyline.jpg"
               alt="Singapore skyline — Marina Bay Sands in the background"
-              aspectRatio="wide"
-              objectFit="cover"
               objectPosition="center 55%"
             />
           </div>

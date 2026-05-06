@@ -27,7 +27,7 @@ export default function VideoEmbed({ videos, layout = 'stack' }: VideoEmbedProps
           )}
         </div>
       )}
-      <div className="rounded-lg overflow-hidden bg-[#F5F4F0]">
+      <div className="rounded-lg overflow-hidden bg-bg-surface">
         <video
           src={v.src}
           poster={poster(v.src)}

@@ -1,4 +1,8 @@
+'use client'
+
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { fadeIn, viewport } from '@/lib/animations'
 
 type AspectRatio = 'panoramic' | 'wide' | 'standard' | 'portrait'
 
@@ -27,9 +31,15 @@ export default function FullWidthImage({
   objectPosition = 'center',
 }: FullWidthImageProps) {
   return (
-    <figure className="my-8">
+    <motion.figure
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewport}
+      className="my-8"
+    >
       {objectFit === 'natural' ? (
-        <div className="rounded-lg overflow-hidden bg-[#F5F4F0]">
+        <div className="rounded-lg overflow-hidden bg-bg-surface">
           <Image
             src={src}
             alt={alt}
@@ -41,7 +51,7 @@ export default function FullWidthImage({
           />
         </div>
       ) : (
-        <div className={`relative w-full ${aspectClasses[aspectRatio]} rounded-lg overflow-hidden bg-[#F5F4F0]`}>
+        <div className={`relative w-full ${aspectClasses[aspectRatio]} rounded-lg overflow-hidden bg-bg-surface`}>
           <Image
             src={src}
             alt={alt}
@@ -58,6 +68,6 @@ export default function FullWidthImage({
           <p className="text-13 text-slate leading-[1.5]">{caption}</p>
         </figcaption>
       )}
-    </figure>
+    </motion.figure>
   )
 }

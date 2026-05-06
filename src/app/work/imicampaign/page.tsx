@@ -11,6 +11,7 @@ import ImpactMetric from '@/components/ImpactMetric'
 import FullWidthImage from '@/components/FullWidthImage'
 import LabeledItem from '@/components/LabeledItem'
 import ImageGroup from '@/components/ImageGroup'
+import ImageCarousel from '@/components/ImageCarousel'
 import MediaTextCard from '@/components/MediaTextCard'
 import PageScrollNav from '@/components/PageScrollNav'
 import VideoEmbed from '@/components/VideoEmbed'
@@ -127,12 +128,17 @@ export default function IMICampaignPage() {
               interviews. By speaking directly with various members of the team across the
               organisation, we captured qualitative insights that defined our path forward.
             </Prose>
-            <ImageGroup
-              variant="sequence"
+            <ImageCarousel
               images={[
-                { src: '/images/imicampaign/problem-areas.png',      caption: 'Problem areas identified across modules' },
-                { src: '/images/imicampaign/overall-product.png',    caption: 'Overall product structure analysis' },
-                { src: '/images/imicampaign/stats-email-heatmap.png',caption: 'Statistics and email heatmap review' },
+                { src: '/images/imicampaign/stakeholder-1-problem-areas.png',    alt: 'Problem areas mapped across all modules',                       caption: 'Problem areas mapped across all modules' },
+                { src: '/images/imicampaign/stakeholder-2-outbound.png',         alt: 'Outbound — Dashboard, Messages, Channels & Deployments',        caption: 'Outbound — Dashboard, Messages, Channels & Deployments' },
+                { src: '/images/imicampaign/stakeholder-3-overall.png',          alt: 'Overall — cross-module issues and quick wins',                  caption: 'Overall — cross-module issues and quick wins' },
+                { src: '/images/imicampaign/stakeholder-4-dashboard.png',        alt: 'Dashboard — Channels, P&L stats and messaging status',          caption: 'Dashboard — Channels, P&L stats and messaging status' },
+                { src: '/images/imicampaign/stakeholder-5-filter-calendar.png',  alt: 'Filter & Calendar — filtering options and tooltip improvements', caption: 'Filter & Calendar — filtering options and tooltip improvements' },
+                { src: '/images/imicampaign/stakeholder-6-stats-email.png',      alt: 'Statistics & Email Heatmap — base screen, customisation and data', caption: 'Statistics & Email Heatmap — base screen, customisation and data' },
+                { src: '/images/imicampaign/stakeholder-7-response-surveys.png', alt: 'Response & Surveys — grouping, visualisation and export needs', caption: 'Response & Surveys — grouping, visualisation and export needs' },
+                { src: '/images/imicampaign/stakeholder-8-app-push.png',         alt: 'App Push — data analysis, engagement and installed base',       caption: 'App Push — data analysis, engagement and installed base' },
+                { src: '/images/imicampaign/stakeholder-9-ab-campaigns.png',     alt: 'A/B Campaigns & App Push — testing, filtering and external actions', caption: 'A/B Campaigns & App Push — testing, filtering and external actions' },
               ]}
             />
 
