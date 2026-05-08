@@ -190,7 +190,7 @@ export default function HomePage() {
               initial="hidden"
               whileInView="visible"
               viewport={viewport}
-              className="grid grid-cols-3 md:grid-cols-3 grid-cols-1 border border-white/[0.06] rounded-xl overflow-hidden divide-x divide-white/[0.06]"
+              className="grid grid-cols-1 md:grid-cols-3 border border-white/[0.06] rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/[0.06]"
             >
               {focusCards.map((card, i) => (
                 <motion.div
@@ -227,7 +227,7 @@ export default function HomePage() {
             <SectionHeader variant="A" title="Selected work" />
 
             <div className="pl-[17px]">
-              <div className="grid grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5 mb-7">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-7">
                 {selectedProjects.map((project) => (
                   <ProjectCard
                     key={project.slug}

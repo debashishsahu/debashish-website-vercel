@@ -100,7 +100,7 @@ export default function Footer() {
               <div className="text-right">
                 <p className="text-13 font-medium text-canvas">Debashish Sahu</p>
                 <p className="text-12 text-mist">Sr. Staff Product Designer</p>
-                <p className="text-12 text-mist">Singapore</p>
+                <p className="text-12 text-mist">Hyderabad, India</p>
               </div>
             </div>
           </div>
