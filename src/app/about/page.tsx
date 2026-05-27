@@ -131,29 +131,6 @@ const education = [
   },
 ]
 
-const testimonials = [
-  {
-    quote:
-      'Debashish has a rare ability to hold the complexity of enterprise systems in his head while simultaneously keeping the end-user experience front of mind. His work on SPW set a new bar for how we design planning products.',
-    name: 'Colleague Name',
-    title: 'Principal Product Manager, ServiceNow',
-    // Replace with a real LinkedIn recommendation or colleague quote
-  },
-  {
-    quote:
-      "Working with Debashish means your team gets a designer who can run workshops, challenge product assumptions, and still deliver pixel-perfect specs. He's the kind of design partner every PM wants.",
-    name: 'Colleague Name',
-    title: 'Sr. Product Manager, ServiceNow',
-    // Replace with a real LinkedIn recommendation or colleague quote
-  },
-  {
-    quote:
-      "Debashish brings both deep craft and a strong strategic voice. He doesn't just design screens — he shapes the product direction and brings the team along with him every step of the way.",
-    name: 'Colleague Name',
-    title: 'Design Director, ServiceNow',
-    // Replace with a real LinkedIn recommendation or colleague quote
-  },
-]
 
 export default function AboutPage() {
   return (
@@ -212,28 +189,6 @@ export default function AboutPage() {
                 globe. Whether it&apos;s a planned holiday or a spontaneous weekend road trip
                 closer to home, I&apos;m always ready for the next adventure.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="px-page-sm md:px-page-md lg:px-page pb-[80px]">
-          <div className="max-w-content mx-auto">
-            <SectionHeader variant="A" title="What Colleagues Say" />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {testimonials.map((t, i) => (
-                <div key={i} className="flex flex-col border border-linen rounded-xl p-6 gap-4">
-                  {/* Opening quote mark */}
-                  <span className="font-display text-[48px] leading-none text-amber/40 select-none -mb-2">&ldquo;</span>
-                  <p className="text-15 text-slate leading-[1.75] flex-1 italic">
-                    {t.quote}
-                  </p>
-                  <div className="pt-3 border-t border-linen">
-                    <p className="text-13 font-semibold text-ink">{t.name}</p>
-                    <p className="text-12 text-mist mt-0.5">{t.title}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
