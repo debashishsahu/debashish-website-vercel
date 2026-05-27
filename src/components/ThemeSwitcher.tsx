@@ -69,19 +69,31 @@ export default function ThemeSwitcher() {
   return (
     <div ref={ref} className="relative">
 
-      {/* Icon button */}
-      <button
-        onClick={() => setOpen(prev => !prev)}
-        aria-label="Switch theme"
-        aria-expanded={open}
-        className="w-8 h-8 rounded-md border border-linen flex items-center justify-center hover:bg-bg-secondary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
-      >
-        <current.Icon
-          size={16}
-          color={current.iconColor}
-          strokeWidth={1.75}
-        />
-      </button>
+      {/* Icon button + tooltip */}
+      <div className="group/btn relative">
+        <button
+          onClick={() => setOpen(prev => !prev)}
+          aria-label="Switch theme"
+          aria-expanded={open}
+          className="w-8 h-8 rounded-md border border-linen flex items-center justify-center hover:bg-bg-secondary transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber"
+        >
+          <current.Icon
+            size={16}
+            color={current.iconColor}
+            strokeWidth={1.75}
+          />
+        </button>
+
+        {/* Tooltip — only when dropdown is closed */}
+        {!open && (
+          <div className="pointer-events-none absolute right-0 top-[calc(100%+6px)] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-150 z-50">
+            <div className="bg-ink text-canvas text-11 font-medium px-2 py-1 rounded-md whitespace-nowrap">
+              Switch theme
+              <div className="absolute -top-[5px] right-3 w-2.5 h-2.5 bg-ink rotate-45 rounded-sm" />
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Dropdown */}
       <AnimatePresence>

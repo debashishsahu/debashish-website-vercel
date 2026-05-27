@@ -15,6 +15,7 @@ import ImageGroup from '@/components/ImageGroup'
 import MediaTextCard from '@/components/MediaTextCard'
 import ComparisonTable from '@/components/ComparisonTable'
 import PageScrollNav from '@/components/PageScrollNav'
+import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
   title: 'Smart Cities — Debashish Sahu',
@@ -66,6 +67,16 @@ export default function SmartCitiesPage() {
           team="Cross-functional — HUE Bangalore & HUE Sydney"
           duration="6 months"
           client="Honeywell · Enterprise"
+        />
+
+        <TLDRBlock
+          summary="A 6-month, research-first initiative exploring how integrated digital design could transform urban operations — from incident management to citizen engagement — for Honeywell's Smart Cities platform."
+          highlights={[
+            { text: 'Conducted in-depth field research across multiple city departments to map fragmented operational pain points' },
+            { text: 'Developed high-level wireframes for 3 core systems: Incident Management, SOP Design, and Citizen Engagement' },
+            { text: 'Cross-team collaboration across Honeywell UX Engineering in Bangalore and Sydney' },
+            { text: 'Established UX strategy and vision that shaped the product roadmap for the Forge Portal' },
+          ]}
         />
 
         <article className="px-page-sm md:px-page-md lg:px-page pb-section">

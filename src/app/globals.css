@@ -48,8 +48,8 @@
   --bg-surface:     #1E2D3D;
   --text-primary:   #F0EDE8;
   --text-secondary: #8FA0AE;
-  --text-muted:     #4A6070;
-  --border:         #1E2D3D;
+  --text-muted:     #7A95A5; /* Raised from #4A6070 → ~5.6:1 contrast (was ~2.7:1, fails WCAG AA) */
+  --border:         #253545;  /* Slightly lighter for better border visibility */
   --accent:         #D4882A;
   --accent-bright:  #E8943A;
   --footer-upper:   #080E14;

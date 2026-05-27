@@ -107,7 +107,9 @@
       "Bash(python3 -c \" import sys, re content = sys.stdin.read\\(\\) scripts = re.findall\\(r'<script[^>]*>\\(.*?\\)</script>', content, re.DOTALL\\) print\\('Total scripts:', len\\(scripts\\)\\) for i,s in enumerate\\(scripts\\): if 'c24e7f_' in s: print\\(f'Script {i} has c24e7f_, len={len\\(s\\)}: {s[:200]}'\\) \")",
       "Bash(python3 find_gallery.py)",
       "WebFetch(domain:siteassets.parastorage.com)",
-      "Bash(grep -o '\"imicampaign\".\\\\{0,200\\\\}' \"D:/Claude/debashish-website-vercel/temp_page2.html\")"
+      "Bash(grep -o '\"imicampaign\".\\\\{0,200\\\\}' \"D:/Claude/debashish-website-vercel/temp_page2.html\")",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:in.linkedin.com)"
     ]
   }
 }

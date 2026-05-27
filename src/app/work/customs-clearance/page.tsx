@@ -13,6 +13,7 @@ import LabeledItem from '@/components/LabeledItem'
 import ImageCarousel from '@/components/ImageCarousel'
 import DocumentEmbed from '@/components/DocumentEmbed'
 import PageScrollNav from '@/components/PageScrollNav'
+import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
   title: 'Customs Clearance — Debashish Sahu',
@@ -60,6 +61,15 @@ export default function CustomsClearancePage() {
           team="2 Interaction Designers · 1 Visual Designer"
           duration="5 weeks"
           client="Agility Logistics · Enterprise"
+        />
+
+        <TLDRBlock
+          summary="A 5-week sprint to redesign a legacy customs clearance application used by trade facilitation officials — replacing dense, fragmented screens with a streamlined, task-focused workflow."
+          highlights={[
+            { text: 'Redesigned complex multi-step clearance workflows into a clear, step-by-step guided process' },
+            { text: 'Modernised a legacy system while preserving domain-critical data relationships and compliance requirements' },
+            { text: 'Delivered production-ready interaction design and visual specs within a tight 5-week timeline' },
+          ]}
         />
 
         <article className="px-page-sm md:px-page-md lg:px-page pb-section">

@@ -99,7 +99,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[18px] md:text-[16px] font-light text-slate leading-[1.65] max-w-[560px] mb-8"
+              className="text-[18px] md:text-[16px] text-slate leading-[1.65] max-w-[560px] mb-8"
             >
               15+ years shaping complex enterprise products — now at the
               intersection of agentic AI, conversational UX, and design
@@ -126,18 +126,7 @@ export default function HomePage() {
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
                 </Link>
               </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-              >
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 bg-transparent text-amber border-[1.5px] border-amber text-13 font-medium px-6 py-[10px] rounded-md hover:bg-[#FAEEDA] transition-colors duration-200"
-                >
-                  About me
-                </Link>
-              </motion.div>
+
             </motion.div>
 
             {/* Meta strip */}
@@ -208,7 +197,7 @@ export default function HomePage() {
                   <h3 className="text-16 font-medium text-[#F7F5F2] mb-2.5 leading-[1.3]">
                     {card.title}
                   </h3>
-                  <p className="text-13 font-light text-mist leading-[1.7] mb-3.5">
+                  <p className="text-13 text-[#8FA8BC] leading-[1.7] mb-3.5">
                     {card.body}
                   </p>
                   <span className="inline-block text-10 font-medium px-2 py-[3px] rounded-sm bg-amber/15 text-amber">

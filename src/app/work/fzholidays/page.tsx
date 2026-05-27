@@ -13,6 +13,7 @@ import ImageGroup from '@/components/ImageGroup'
 import ImageCarousel from '@/components/ImageCarousel'
 import ImpactMetric from '@/components/ImpactMetric'
 import PageScrollNav from '@/components/PageScrollNav'
+import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
   title: 'FlyDubai Holidays — Debashish Sahu',
@@ -61,6 +62,16 @@ export default function FzHolidaysPage() {
           team="1 Design Manager · 2 Design Leads · 3 Interaction Designers · 2 Visual Designers"
           duration="6 months (Sept 2016 – March 2017)"
           client="FlyDubai · B2C · Middle East"
+        />
+
+        <TLDRBlock
+          summary="A 6-month B2C project to design a one-stop holiday booking experience for FlyDubai — covering flights, hotels, transfers, and activities in a single, intuitive flow for Middle Eastern travellers."
+          highlights={[
+            { text: 'Conducted competitive research across 8 major travel booking platforms to identify best-in-class patterns and gaps' },
+            { text: 'Designed end-to-end booking flows for packages, flights, hotels, and ancillaries for a market-specific audience' },
+            { text: 'Collaborated within a team of 9 designers across multiple workstreams over 6 months' },
+            { text: 'Produced a scalable design system supporting the full range of holiday product types and configurations' },
+          ]}
         />
 
         <article className="px-page-sm md:px-page-md lg:px-page pb-section">

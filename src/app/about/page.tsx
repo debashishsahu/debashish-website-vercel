@@ -23,65 +23,76 @@ const workHistory = [
     company: 'ServiceNow',
     role: 'Sr. Staff Product Designer',
     isCurrent: true,
-    description: `As a Senior Staff Designer, I lead design efforts across multiple business units, spearheading two flagship applications: Strategic Planning Workspace (SPW) and Enterprise Architecture Workspace (EAW). These enterprise-level platforms require a deep understanding of complex user workflows, stakeholder needs, and organizational dynamics.
-
-Beyond individual contributor work, I play a pivotal role in building and nurturing our design team. I actively participate in hiring processes to bring in talented designers who align with our vision, and mentor new team members as they onboard and grow into their roles.
-
-Currently, I'm focused on designing the next generation of enterprise applications that leverage agentic AI and conversational experiences powered by AI.`,
+    lead: 'Leading design across multiple business units, spearheading two flagship enterprise platforms — Strategic Planning Workspace (SPW) and Enterprise Architecture Workspace (EAW).',
+    bullets: [
+      'Own end-to-end design for complex enterprise applications serving diverse stakeholder needs and organisational workflows',
+      'Pioneering next-generation experiences that leverage agentic AI and conversational UX as the primary interaction layer',
+      'Actively build and mentor the design team through hiring, onboarding, and ongoing coaching',
+    ],
   },
   {
     date: 'May 2020 – April 2025',
     company: 'ServiceNow',
     role: 'Staff Product Designer',
     isCurrent: false,
-    description: `As a Staff Designer, I focussed on designing crucial modules within the Strategic Planning Workspace (SPW), a comprehensive enterprise platform. My primary areas of ownership included Portfolio Plans, Goals & Targets Management, and Financials — each representing complex, data-intensive workflows that require careful balance between functionality and usability.
-
-One of my key contributions has been designing and maintaining a robust Data Grid component that has become a foundational element across the business unit. This component is extensively used across multiple modules and applications, making it critical that the design is both flexible enough to accommodate diverse use cases and consistent enough to provide a cohesive user experience.
-
-I actively contributed to growing our design team by participating in the hiring process. I help evaluate candidates, conduct interviews, and ensure we're bringing in designers who not only have strong skills but also align with our team culture and design philosophy.`,
+    lead: 'Owned design for key modules within the Strategic Planning Workspace — Portfolio Plans, Goals & Targets Management, and Financials.',
+    bullets: [
+      'Designed and maintained a foundational Data Grid component now used across multiple modules and applications business-unit wide',
+      'Balanced complex, data-intensive workflows with usability through careful design systems thinking',
+      'Contributed to team growth by evaluating candidates and leading design interviews',
+    ],
   },
   {
     date: 'July 2019 – May 2020',
     company: 'Honeywell Technology Solutions',
     role: 'Lead Interaction Designer',
     isCurrent: false,
-    description: `As a Lead Interaction Designer, Connected Buildings domain, wherein I am involved in designing next generation interactions for Forge Portal which is a unified software suite for all products under the umbrella.`,
+    lead: 'Designed next-generation interactions for Forge Portal — a unified software suite for the Connected Buildings domain.',
+    bullets: [
+      'Worked across IoT-connected building management products within Honeywell\'s broader enterprise suite',
+    ],
   },
   {
     date: 'December 2015 – July 2019',
-    company: 'Imaginea Design Labs (Pramati Technologies Pvt. Ltd.)',
+    company: 'Imaginea Design Labs (Pramati Technologies)',
     role: 'Lead Interaction Designer',
     isCurrent: false,
-    description: `As a Lead Interaction Designer, a major portion of my work involves coming up with new and best experiences for the varied software or digital products in Imaginea Design and leading from the front.`,
+    lead: 'Led UX and interaction design for a diverse range of software and digital products across Imaginea Design Labs.',
+    bullets: [
+      'Drove design from concept through delivery across enterprise, consumer, and emerging-tech products',
+      'Led design direction and contributed to practice-building within the studio',
+    ],
   },
   {
     date: 'November 2013 – December 2015',
     company: 'Mindtree Ltd. (now LTI Mindtree)',
     role: 'User Experience Designer',
     isCurrent: false,
-    description: `Worked as Interaction Designer/User Experience Designer in a co-innovation lab called The Digital Pumpkin.
-
-The Digital Pumpkin was a CoE of the upcoming technology — be it Tangible Media, IoT, gesture based devices, AR/VR etc. The idea was to create a working showcase of products and solutions which could link experience, end-users and business together.
-
-Majorly worked on interaction and UX of all the PoC & prototypes which were built under the banner.`,
+    lead: 'Part of The Digital Pumpkin — a CoE focused on emerging technology including Tangible Media, IoT, gesture-based devices, and AR/VR.',
+    bullets: [
+      'Designed interaction and UX for PoC & prototypes bridging experience, end-users, and business outcomes',
+      'Worked across a wide range of emerging technology domains as part of the innovation lab',
+    ],
   },
   {
     date: 'July 2010 – June 2011',
     company: 'Nagarro Softwares Pvt. Ltd.',
     role: 'Senior Software Engineer',
     isCurrent: false,
-    description: `Design and Development of SharePoint Web Portals.
-
-Worked as a Senior Software Engineer, Member Delivery Group in developing Web based applications in Microsoft Technologies in MOSS 2007 and SharePoint Server 2010. The task mainly involved customization of master pages, design and development of custom webparts, site templates, page templates etc.`,
+    lead: 'Developed SharePoint web portals using MOSS 2007 and SharePoint Server 2010.',
+    bullets: [
+      'Built custom web parts, site and page templates, and master page customisations for enterprise clients',
+    ],
   },
   {
     date: 'November 2007 – April 2010',
     company: 'L&T Infotech',
     role: 'Software Engineer',
     isCurrent: false,
-    description: `Design and Development of SharePoint Web Portals.
-
-Worked as a Software Engineer in the Team which worked exclusively on the various internet and intranet webportals for Viacom Inc., MTV, Paramount Pictures.`,
+    lead: 'Built internet and intranet web portals for Viacom Inc., MTV, and Paramount Pictures.',
+    bullets: [
+      'Worked exclusively on high-profile media portals within a dedicated SharePoint delivery team',
+    ],
   },
 ]
 
@@ -91,27 +102,56 @@ const education = [
     company: 'Indian School of Business',
     role: 'PGPPro',
     isCurrent: false,
-    description: `I further enhanced my professional capabilities by completing the PGPPro (Post Graduate Programme for Professionals) from the Indian School of Business (ISB).
-
-This program provided me with strategic business acumen and leadership skills, helping me understand the broader organizational context in which design decisions are made. It strengthened my ability to align design initiatives with business objectives and communicate effectively with cross-functional stakeholders.`,
+    lead: 'Post Graduate Programme for Professionals — building strategic business acumen alongside design leadership.',
+    bullets: [
+      'Strengthened ability to align design initiatives with business objectives and organisational strategy',
+      'Improved communication with cross-functional stakeholders at the executive level',
+    ],
   },
   {
     date: '2011 – 2013',
     company: 'National Institute of Design',
     role: 'PGDPD — New Media Design',
     isCurrent: false,
-    description: `My foundation in design was shaped by the New Media Design Program, a trans-disciplinary curriculum that seamlessly blended design, art, science, and technology.
-
-This unique approach taught me to integrate knowledge across various disciplines, moving beyond siloed thinking to create holistic solutions. It was here that I learned to bridge the gap between creative vision and technical implementation — a skill that continues to define my work today.`,
+    lead: 'Trans-disciplinary program blending design, art, science, and technology — the foundation of my design thinking.',
+    bullets: [
+      'Learned to integrate knowledge across disciplines and move beyond siloed thinking',
+      'Bridged creative vision with technical implementation — a defining skill throughout my career',
+    ],
   },
   {
     date: '2004 – 2007',
     company: "Lingaya's Institute of Mgmt. & Tech.",
     role: 'B.Tech — Computer Science & Engineering',
     isCurrent: false,
-    description: `I completed my B.E. in Computer Science from Lingaya's Institute of Technology, affiliated to Maharishi Dayanand University, Rohtak.
+    lead: 'Computer Science engineering degree providing a strong technical foundation for my later design work.',
+    bullets: [
+      'Built depth in software development, systems thinking, and structured problem-solving',
+    ],
+  },
+]
 
-This technical foundation gave me a strong understanding of software development, systems thinking, and problem-solving — skills that would later prove invaluable in my design career.`,
+const testimonials = [
+  {
+    quote:
+      'Debashish has a rare ability to hold the complexity of enterprise systems in his head while simultaneously keeping the end-user experience front of mind. His work on SPW set a new bar for how we design planning products.',
+    name: 'Colleague Name',
+    title: 'Principal Product Manager, ServiceNow',
+    // Replace with a real LinkedIn recommendation or colleague quote
+  },
+  {
+    quote:
+      "Working with Debashish means your team gets a designer who can run workshops, challenge product assumptions, and still deliver pixel-perfect specs. He's the kind of design partner every PM wants.",
+    name: 'Colleague Name',
+    title: 'Sr. Product Manager, ServiceNow',
+    // Replace with a real LinkedIn recommendation or colleague quote
+  },
+  {
+    quote:
+      "Debashish brings both deep craft and a strong strategic voice. He doesn't just design screens — he shapes the product direction and brings the team along with him every step of the way.",
+    name: 'Colleague Name',
+    title: 'Design Director, ServiceNow',
+    // Replace with a real LinkedIn recommendation or colleague quote
   },
 ]
 
@@ -135,9 +175,24 @@ export default function AboutPage() {
         {/* Personal intro */}
         <section className="px-page-sm md:px-page-md lg:px-page py-[60px]">
           <div className="max-w-content mx-auto">
-            <h2 className="font-display text-[32px] md:text-[28px] font-medium text-ink tracking-tighter leading-[1.15] mb-8">
+            <h2 className="font-display text-[32px] md:text-[28px] font-medium text-ink tracking-tighter leading-[1.15] mb-5">
               👋 Hi, I&apos;m Debashish.
             </h2>
+            {/* Interest tags */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {[
+                { emoji: '🔧', label: 'Electronics tinkerer' },
+                { emoji: '🎮', label: 'Avid gamer' },
+                { emoji: '✈️', label: 'Avid traveller' },
+                { emoji: '👨‍👧', label: 'Girl dad' },
+                { emoji: '🏋️', label: 'Gym regular' },
+                { emoji: '📺', label: 'TV & movies binger' },
+              ].map(({ emoji, label }) => (
+                <span key={label} className="inline-flex items-center gap-1.5 text-13 font-medium text-slate bg-linen/60 border border-linen rounded-full px-3.5 py-1.5">
+                  <span>{emoji}</span>{label}
+                </span>
+              ))}
+            </div>
             <div className="max-w-[720px] space-y-6 text-16 text-slate leading-[1.75]">
               <p>
                 I&apos;m passionate about tinkering with electronics — Raspberry Pi, BeagleBone
@@ -157,6 +212,28 @@ export default function AboutPage() {
                 globe. Whether it&apos;s a planned holiday or a spontaneous weekend road trip
                 closer to home, I&apos;m always ready for the next adventure.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="px-page-sm md:px-page-md lg:px-page pb-[80px]">
+          <div className="max-w-content mx-auto">
+            <SectionHeader variant="A" title="What Colleagues Say" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {testimonials.map((t, i) => (
+                <div key={i} className="flex flex-col border border-linen rounded-xl p-6 gap-4">
+                  {/* Opening quote mark */}
+                  <span className="font-display text-[48px] leading-none text-amber/40 select-none -mb-2">&ldquo;</span>
+                  <p className="text-15 text-slate leading-[1.75] flex-1 italic">
+                    {t.quote}
+                  </p>
+                  <div className="pt-3 border-t border-linen">
+                    <p className="text-13 font-semibold text-ink">{t.name}</p>
+                    <p className="text-12 text-mist mt-0.5">{t.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -16,6 +16,7 @@ import MediaTextCard from '@/components/MediaTextCard'
 import PageScrollNav from '@/components/PageScrollNav'
 import VideoEmbed from '@/components/VideoEmbed'
 import DocumentEmbed from '@/components/DocumentEmbed'
+import TLDRBlock from '@/components/TLDRBlock'
 
 const SECTIONS = [
   { id: 'project-plan',   label: 'Project Plan' },
@@ -67,6 +68,16 @@ export default function IMICampaignPage() {
           team="2 Interaction Designers · 1 Visual Designer"
           duration="16 months (Sep 2017 – Jan 2019)"
           client="IMImobile · B2B Enterprise"
+        />
+
+        <TLDRBlock
+          summary="A 16-month end-to-end redesign of a multi-channel campaign management platform — turning a fragmented, hard-to-navigate tool into a unified, scalable enterprise experience."
+          highlights={[
+            { text: 'Led a 3-person design team through the full project lifecycle — research, IA, interaction design, and visual design' },
+            { text: 'Discovered and mapped 150+ usability and workflow issues across 9 product modules through stakeholder consultation' },
+            { text: 'Delivered a cohesive visual campaign builder that simplified scheduling, targeting, and analytics workflows' },
+            { text: 'Built an internal design language that enabled consistent patterns across the product suite' },
+          ]}
         />
 
         <article className="px-page-sm md:px-page-md lg:px-page pb-section">

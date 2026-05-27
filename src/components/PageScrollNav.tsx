@@ -40,7 +40,7 @@ export default function PageScrollNav({ sections }: { sections: Section[] }) {
             {/* Connector line (above each dot except first) */}
             {i > 0 && (
               <div
-                className={`w-px h-5 mr-[4px] transition-colors duration-400 ${
+                className={`w-px h-5 mr-[4px] transition-colors duration-300 ${
                   isPast ? 'bg-amber' : 'bg-linen'
                 }`}
               />
@@ -49,28 +49,31 @@ export default function PageScrollNav({ sections }: { sections: Section[] }) {
             {/* Dot + label row */}
             <a
               href={`#${section.id}`}
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-2.5 group py-0.5"
               onClick={e => {
                 e.preventDefault()
                 document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
               }}
             >
+              {/* Label */}
               <span
-                className={`text-12 font-medium uppercase tracking-label transition-all duration-200 whitespace-nowrap ${
+                className={`text-11 font-semibold uppercase tracking-label transition-all duration-200 whitespace-nowrap ${
                   isActive
-                    ? 'opacity-100 text-ink'
-                    : 'opacity-0 group-hover:opacity-50 text-slate'
+                    ? 'opacity-100 text-ink translate-x-0'
+                    : 'opacity-0 group-hover:opacity-100 translate-x-1 group-hover:translate-x-0 text-slate'
                 }`}
               >
                 {section.label}
               </span>
+
+              {/* Dot */}
               <div
-                className={`rounded-full border-2 flex-shrink-0 transition-all duration-200 ${
+                className={`rounded-full flex-shrink-0 transition-all duration-200 ${
                   isActive
-                    ? 'w-2.5 h-2.5 bg-amber border-amber'
+                    ? 'w-[10px] h-[10px] bg-amber ring-2 ring-amber/30'
                     : isPast
-                    ? 'w-2 h-2 bg-amber/40 border-amber/40 group-hover:border-amber'
-                    : 'w-2 h-2 bg-transparent border-linen group-hover:border-amber/60'
+                    ? 'w-2 h-2 bg-amber/50 group-hover:w-[9px] group-hover:h-[9px] group-hover:bg-amber group-hover:ring-2 group-hover:ring-amber/30'
+                    : 'w-2 h-2 bg-linen group-hover:w-[9px] group-hover:h-[9px] group-hover:bg-amber/60 group-hover:ring-2 group-hover:ring-amber/20'
                 }`}
               />
             </a>

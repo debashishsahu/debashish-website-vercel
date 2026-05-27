@@ -15,6 +15,7 @@ import ImageGroup from '@/components/ImageGroup'
 import ImageCarousel from '@/components/ImageCarousel'
 import ImpactMetric from '@/components/ImpactMetric'
 import PageScrollNav from '@/components/PageScrollNav'
+import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
   title: 'Space Explorer — Debashish Sahu',
@@ -67,6 +68,16 @@ export default function SpaceExplorerPage() {
           team="Solo project — NID Diploma"
           duration="~7 months"
           client="Nehru Planetarium, Delhi"
+        />
+
+        <TLDRBlock
+          summary="A solo NID diploma project designing a full-body, gesture-based interactive game for Nehru Planetarium in Delhi — transforming passive museum learning into an engaging, exploratory play experience."
+          highlights={[
+            { text: 'Handled the full design process solo — from concept and user research to game design, interaction modelling, and prototyping' },
+            { text: 'Designed gesture vocabulary and interaction grammar for full-body motion input without a controller' },
+            { text: 'Conducted user testing with children and families to validate comprehension and engagement of the gesture system' },
+            { text: 'Built functional prototypes using depth-sensing hardware to demonstrate the core gameplay loop' },
+          ]}
         />
 
         <article className="px-page-sm md:px-page-md lg:px-page pb-section">
