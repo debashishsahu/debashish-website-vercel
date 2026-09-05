@@ -10,7 +10,7 @@ import LabeledItem from '@/components/LabeledItem'
 import ImageGroup from '@/components/ImageGroup'
 
 export const metadata: Metadata = {
-  title: '3D Drawing Canvas — Debashish Sahu',
+  title: '3D Drawing Canvas',
   description:
     'Liberating 3D digital sketching from traditional peripherals using Microsoft Kinect, Processing, and a custom gesture library — an NID interaction design classroom project.',
   openGraph: {

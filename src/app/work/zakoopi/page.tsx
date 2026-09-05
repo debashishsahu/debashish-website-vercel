@@ -12,7 +12,7 @@ import DocumentEmbed from '@/components/DocumentEmbed'
 import PageScrollNav from '@/components/PageScrollNav'
 
 export const metadata: Metadata = {
-  title: 'Zakoopi — Debashish Sahu',
+  title: 'Zakoopi',
   description:
     'Designing a hyper-local discovery platform for custom-wear designers, boutiques, and tailors in Indian cities — a 6-week freelance project from NID covering gorilla research, personas, user flows, and wireframes.',
   openGraph: {

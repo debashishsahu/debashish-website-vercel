@@ -9,7 +9,7 @@ import FullWidthImage from '@/components/FullWidthImage'
 import LabeledItem from '@/components/LabeledItem'
 
 export const metadata: Metadata = {
-  title: 'SENSiT / Spine Chair — Debashish Sahu',
+  title: 'SENSiT / Spine Chair',
   description:
     "A smart IoT chair that detects incorrect posture and alerts users — a pilot project from Imaginea Design Labs' IoT Lab under Pramati Technologies, Hyderabad.",
   openGraph: {

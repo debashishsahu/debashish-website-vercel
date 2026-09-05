@@ -16,7 +16,7 @@ import PageScrollNav from '@/components/PageScrollNav'
 import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
-  title: 'Customs Clearance — Debashish Sahu',
+  title: 'Customs Clearance',
   description:
     "Redefining UX for Agility Logistics's Microclear Suite customs management system — a 5-week engagement covering discovery, stakeholder workshops, wireframes, and visual design.",
   openGraph: {

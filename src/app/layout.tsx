@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { Analytics } from '@vercel/analytics/next'
@@ -29,7 +29,13 @@ export const metadata: Metadata = {
       { rel: 'manifest', url: '/site.webmanifest' },
     ],
   },
-  themeColor: '#111B24',
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#F7F5F2' },
+    { media: '(prefers-color-scheme: dark)', color: '#0F1923' },
+  ],
 }
 
 export default function RootLayout({
@@ -45,11 +51,17 @@ export default function RootLayout({
         <link rel="icon"             href="/favicon-16x16.png" sizes="16x16" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest"         href="/site.webmanifest" />
-        <meta name="theme-color"     content="#111B24" />
         {/* FOUC prevention — runs synchronously before first paint */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('portfolio-theme');if(t&&['sand','light','midnight'].includes(t)){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
+          }}
+        />
+        {/* Without JS, framer-motion never clears its pre-reveal inline
+            opacity:0 — force all content visible so the page is readable. */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<style>[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important;transform:none!important}</style>`,
           }}
         />
       </head>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, ReactNode } from 'react'
 
 interface FadeUpProps {
@@ -18,6 +18,16 @@ export default function FadeUp({
 }: FadeUpProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once, margin: '-60px 0px' })
+  const reduce = useReducedMotion()
+
+  // Reduced motion: never gate content on scroll or hide it — render as-is.
+  if (reduce) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    )
+  }
 
   return (
     <motion.div

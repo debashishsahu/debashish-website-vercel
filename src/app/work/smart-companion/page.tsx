@@ -10,7 +10,7 @@ import LabeledItem from '@/components/LabeledItem'
 import DocumentEmbed from '@/components/DocumentEmbed'
 
 export const metadata: Metadata = {
-  title: 'Context Smart Companion — Debashish Sahu',
+  title: 'Context Smart Companion',
   description:
     'Re-thinking the ideal wearable — a research-based PoC under Digital Pumpkin at L&T Infotech, exploring emotionally-aware, context-sensitive companion devices for the North US market.',
   openGraph: {

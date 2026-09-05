@@ -32,7 +32,7 @@ const SECTIONS = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Campaign Management System — Debashish Sahu',
+  title: 'Campaign Management System',
   description:
     'Redesigning an existing multi-channel campaign management platform for IMImobile. A 16-month engagement covering research, IA, visual campaign builder, and design systems.',
   openGraph: {

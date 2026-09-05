@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import FadeUp from '@/components/FadeUp'
 
 interface TimelineItem {
@@ -17,6 +17,8 @@ interface TimelineEntryProps {
 }
 
 export default function TimelineEntry({ entries }: TimelineEntryProps) {
+  const reduceMotion = useReducedMotion()
+
   return (
     <div className="relative">
       {/* Desktop vertical line */}
@@ -38,11 +40,13 @@ export default function TimelineEntry({ entries }: TimelineEntryProps) {
               <div className="hidden md:block absolute left-[155px] top-[3px]">
                 {entry.isCurrent ? (
                   <span className="relative flex h-[10px] w-[10px]">
-                    <motion.span
-                      className="absolute inline-flex h-full w-full rounded-full bg-amber"
-                      animate={{ scale: [1, 1.9], opacity: [0.6, 0] }}
-                      transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
-                    />
+                    {!reduceMotion && (
+                      <motion.span
+                        className="absolute inline-flex h-full w-full rounded-full bg-amber"
+                        animate={{ scale: [1, 1.9], opacity: [0.6, 0] }}
+                        transition={{ duration: 1.6, repeat: Infinity, ease: 'easeOut' }}
+                      />
+                    )}
                     <span className="relative inline-flex h-[10px] w-[10px] rounded-full bg-amber border-2 border-canvas ring-1 ring-amber" />
                   </span>
                 ) : (

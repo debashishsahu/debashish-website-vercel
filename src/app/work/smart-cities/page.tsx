@@ -18,7 +18,7 @@ import PageScrollNav from '@/components/PageScrollNav'
 import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
-  title: 'Smart Cities — Debashish Sahu',
+  title: 'Smart Cities',
   description:
     'Revolutionizing urban living through digital design — a research-driven UX initiative for Honeywell Smart Cities covering incident management, SOP design, and citizen engagement.',
   openGraph: {

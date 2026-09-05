@@ -13,8 +13,9 @@ export default function OwlLogo({ size = 24, className }: OwlLogoProps) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className={className}
+      style={{ color: 'var(--text-primary)' }}
     >
-      <circle cx="24" cy="24" r="24" fill="#000000"/>
+      <circle cx="24" cy="24" r="24" fill="currentColor"/>
 
       <polygon points="9,12 13,12 10,4"  fill="#D4882A" opacity="1"/>
       <polygon points="13,12 18,12 15,6" fill="#D4882A" opacity="0.8"/>
@@ -29,8 +30,8 @@ export default function OwlLogo({ size = 24, className }: OwlLogoProps) {
       <rect x="9" y="42" width="13" height="4" rx="2" fill="#D4882A" opacity="0.68"/>
       <rect x="9" y="48" width="8"  height="4" rx="2" fill="#D4882A" opacity="0.35"/>
 
-      <circle cx="23" cy="21" r="8"   fill="#F0EDE8"/>
-      <circle cx="23" cy="21" r="2.8" fill="#000000"/>
+      <circle cx="23" cy="21" r="8"   style={{ fill: 'var(--bg)' }}/>
+      <circle cx="23" cy="21" r="2.8" fill="currentColor"/>
 
       <polygon points="9,44 14,44 11,49" fill="#D4882A" opacity="0.7"/>
     </svg>

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { tagColors } from '@/data/projects'
 import { viewport } from '@/lib/animations'
 
@@ -65,23 +65,30 @@ function CardPlaceholder({ tags, size }: { tags: string[]; size: 'featured' | 's
 }
 
 export default function ProjectCard({ variant, image, title, description, tags, meta, href }: ProjectCardProps) {
+  const reduce = useReducedMotion()
+  const reveal = reduce
+    ? {}
+    : {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport,
+        transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const },
+      }
+
   if (variant === 'featured') {
     return (
       <Link href={href} className="group block h-full">
         <motion.div
           className="flex flex-col border border-linen rounded-xl overflow-hidden bg-white/40 h-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          whileHover={{ borderColor: '#D4882A', y: -4 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          {...reveal}
+          whileHover={reduce ? undefined : { borderColor: '#D4882A', y: -4 }}
         >
           <div className="relative w-full overflow-hidden" style={{ aspectRatio: '450 / 316' }}>
             {image ? (
               <motion.div className="absolute inset-0" whileHover={{ scale: 1.04 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
                 <Image
                   src={image}
-                  alt={`${title} project thumbnail`}
+                  alt={`${title} — project cover`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px"
                   className="object-cover"
@@ -103,7 +110,7 @@ export default function ProjectCard({ variant, image, title, description, tags, 
             <p className="text-13 text-slate leading-[1.6] mb-3.5 flex-1">{description}</p>
             <div className="flex items-center justify-between">
               <span className="text-12 text-mist">{meta}</span>
-              <motion.span className="inline-flex items-center gap-1.5 text-12 font-medium text-amber" whileHover={{ x: 4 }} transition={{ duration: 0.2 }}>
+              <motion.span className="inline-flex items-center gap-1.5 text-12 font-medium text-amber-text" whileHover={reduce ? undefined : { x: 4 }} transition={{ duration: 0.2 }}>
                 View case study
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
               </motion.span>
@@ -118,18 +125,15 @@ export default function ProjectCard({ variant, image, title, description, tags, 
     <Link href={href} className="group block h-full">
       <motion.div
         className="flex flex-col border border-linen rounded-xl overflow-hidden bg-white/40 h-full"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={viewport}
-        whileHover={{ borderColor: '#D4882A', y: -3 }}
-        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        {...reveal}
+        whileHover={reduce ? undefined : { borderColor: '#D4882A', y: -3 }}
       >
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: '378 / 266' }}>
           {image ? (
             <motion.div className="absolute inset-0" whileHover={{ scale: 1.04 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}>
               <Image
                 src={image}
-                alt={`${title} project thumbnail`}
+                alt={`${title} — project cover`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 400px"
                 className="object-cover"

@@ -9,7 +9,7 @@ import LabeledItem from '@/components/LabeledItem'
 import DocumentEmbed from '@/components/DocumentEmbed'
 
 export const metadata: Metadata = {
-  title: 'Semantic Emails — Debashish Sahu',
+  title: 'Semantic Emails',
   description:
     'A design paper published at OZCHI introducing semantic email agents — emails that interact with each other in a user-controlled digital landscape. Built in 24 hours at NID.',
   openGraph: {

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: '.next-dev',
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [320, 768, 1280, 1920],

@@ -15,6 +15,7 @@ const config: Config = {
         linen:           'var(--border)',
         amber:           'var(--accent)',
         'amber-bright':  'var(--accent-bright)',
+        'amber-text':    'var(--accent-text)',
         ivory:           '#D4C4B0',
         'footer-dark':   'var(--footer-upper)',
         'footer-darker': 'var(--footer-lower)',

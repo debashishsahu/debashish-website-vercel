@@ -9,7 +9,7 @@ import LabeledItem from '@/components/LabeledItem'
 import DocumentEmbed from '@/components/DocumentEmbed'
 
 export const metadata: Metadata = {
-  title: 'Touch the Retail — Debashish Sahu',
+  title: 'Touch the Retail',
   description:
     'A kiosk-based showrooming concept for a vitamins and nutritional supplements retailer — using the mobile phone as shopping cart to elevate the brick and mortar experience.',
   openGraph: {

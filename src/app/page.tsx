@@ -1,31 +1,19 @@
 'use client'
 
-import type { Metadata } from 'next'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionHeader from '@/components/SectionHeader'
 import ProjectCard from '@/components/ProjectCard'
 import { projects } from '@/data/projects'
-import { staggerContainer, viewport } from '@/lib/animations'
+import { viewport } from '@/lib/animations'
 
-const selectedSlugs = ['imicampaign', 'smart-cities', 'fzholidays', 'space-explorer']
+// Leads with the most enterprise-relevant work; recency and relevance first.
+const selectedSlugs = ['imicampaign', 'smart-cities', 'customs-clearance', 'fzholidays']
 const selectedProjects = selectedSlugs
   .map((slug) => projects.find((p) => p.slug === slug))
   .filter(Boolean) as typeof projects
-
-// Word segments for headline — each word individually animated
-const headlineSegments: { text: string; amber?: boolean; br?: boolean }[] = [
-  { text: 'Designing' },
-  { text: 'AI-native', amber: true },
-  { text: 'enterprise' },
-  { text: 'experiences' },
-  { text: '__br__', br: true },
-  { text: 'that' },
-  { text: 'actually' },
-  { text: 'work.' },
-]
 
 const focusCards = [
   {
@@ -46,166 +34,123 @@ const focusCards = [
 ]
 
 export default function HomePage() {
+  const reduce = useReducedMotion()
+  const EASE = [0.22, 1, 0.36, 1] as const
+  // Reduced motion / SSR-safe: no hidden initial state, content is always painted.
+  const rise = (y = 16, delay = 0) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.6, delay, ease: EASE },
+        }
+
   return (
     <>
       <Navbar />
       <main>
 
         {/* ── Section 1 — Hero ── */}
-        <section className="px-page-sm md:px-page-md lg:px-page py-[80px] md:py-[60px]">
+        <section className="px-page-sm md:px-page-md lg:px-page pt-[72px] pb-[88px] md:pt-[88px] md:pb-[104px]">
           <div className="max-w-content mx-auto">
 
-            {/* Eyebrow */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-3 mb-5"
+            <motion.h1
+              {...rise(24, 0)}
+              className="font-display font-medium text-ink leading-[1.03] tracking-tight max-w-[15ch] text-[clamp(2.5rem,8vw,4.75rem)]"
             >
-              <div className="w-8 h-[1.5px] bg-amber flex-shrink-0" />
-              <span className="text-12 font-medium uppercase tracking-label text-amber">
-                Sr. Staff Product Designer · ServiceNow
-              </span>
-            </motion.div>
+              Designing{' '}
+              <span className="text-amber-text">AI-native</span>{' '}
+              enterprise experiences that actually work.
+            </motion.h1>
 
-            {/* Headline — word by word */}
-            <h1 className="font-display font-medium text-ink leading-[1.06] tracking-tight mb-5 max-w-[760px] text-[52px] md:text-[40px]">
-              {headlineSegments.map((seg, i) => {
-                if (seg.br) {
-                  return <br key={i} className="hidden sm:block" />
-                }
-                const wordIndex = headlineSegments.slice(0, i).filter(s => !s.br).length
-                return (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: 0.2 + wordIndex * 0.07,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    style={{ display: 'inline-block', marginRight: '0.28em' }}
-                    className={seg.amber ? 'not-italic text-amber' : ''}
-                  >
-                    {seg.text}
-                  </motion.span>
-                )
-              })}
-            </h1>
-
-            {/* Descriptor */}
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              className="text-[18px] md:text-[16px] text-slate leading-[1.65] max-w-[560px] mb-8"
+              {...rise(16, reduce ? 0 : 0.12)}
+              className="text-[17px] md:text-[19px] text-slate leading-[1.6] max-w-[52ch] mt-7"
             >
-              15+ years shaping complex enterprise products — now at the
-              intersection of agentic AI, conversational UX, and design
-              systems that scale.
+              15+ years shaping complex enterprise software — now designing where
+              agentic AI, conversational UX, and design systems at scale meet, as
+              Sr.&nbsp;Staff Product Designer at ServiceNow.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.88, ease: [0.22, 1, 0.36, 1] }}
-              className="flex gap-3 mb-9 flex-wrap"
+              {...rise(16, reduce ? 0 : 0.2)}
+              className="flex flex-wrap items-center gap-x-4 gap-y-3 mt-9"
             >
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+              <Link
+                href="#selected-work"
+                className="inline-flex items-center gap-2 bg-ink text-canvas text-13 font-medium px-6 py-[11px] rounded-md hover:bg-slate transition-colors duration-200"
               >
-                <Link
-                  href="#selected-work"
-                  className="inline-flex items-center gap-2 bg-ink text-canvas text-13 font-medium px-6 py-[10px] rounded-md hover:bg-slate transition-colors duration-200"
-                >
-                  View selected work
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
-                </Link>
-              </motion.div>
-
+                View selected work
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5" /></svg>
+              </Link>
+              <a
+                href="mailto:debashishsahu@outlook.com"
+                className="inline-flex items-center gap-1.5 text-13 font-medium text-ink underline decoration-linen decoration-2 underline-offset-[5px] hover:decoration-amber transition-colors duration-200 px-1 py-[11px]"
+              >
+                Get in touch
+              </a>
             </motion.div>
 
-            {/* Meta strip */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="flex items-center gap-4 flex-wrap"
+              {...rise(12, reduce ? 0 : 0.28)}
+              className="flex items-center flex-wrap gap-x-3 gap-y-1.5 mt-12 text-13 text-mist"
             >
-              <span className="text-14 font-medium text-ink">Debashish Sahu</span>
-              <div className="w-px h-4 bg-linen" />
-              <span className="text-13 text-mist">ServiceNow · Hyderabad</span>
-              <div className="w-px h-4 bg-linen" />
-              <span className="text-13 text-mist">NID · ISB</span>
+              <span className="font-medium text-slate">Debashish Sahu</span>
+              <span className="w-1 h-1 rounded-full bg-mist/60" />
+              <span>ex-Honeywell</span>
+              <span className="w-1 h-1 rounded-full bg-mist/60" />
+              <span>Mindtree</span>
+              <span className="w-1 h-1 rounded-full bg-mist/60" />
+              <span>NID · ISB</span>
+              <span className="w-1 h-1 rounded-full bg-mist/60" />
+              <span>Hyderabad</span>
             </motion.div>
 
           </div>
         </section>
 
         {/* ── Section 2 — Current Focus ── */}
-        <section className="bg-[#1A2530] py-[72px] md:py-[56px] px-page-sm md:px-page-md lg:px-page">
+        <section className="bg-[#161F29] text-[#E7ECF1] py-[84px] md:py-[100px] px-page-sm md:px-page-md lg:px-page">
           <div className="max-w-content mx-auto">
 
-            {/* Section header */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewport}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-end justify-between mb-10 flex-col md:flex-row gap-4"
+              {...rise(20, 0)}
+              {...(reduce ? {} : { whileInView: { opacity: 1, y: 0 }, initial: { opacity: 0, y: 20 }, viewport })}
+              className="max-w-[760px]"
             >
-              <div>
-                <div className="text-12 font-medium uppercase tracking-label text-amber mb-3">
-                  What I&apos;m working on
-                </div>
-                <h2 className="font-display font-medium text-[#F7F5F2] text-[32px] md:text-[28px] tracking-tighter leading-[1.15]">
-                  Currently deep in<br />AI × Enterprise Design.
-                </h2>
+              <div className="text-12 font-medium uppercase tracking-label text-amber-bright mb-4">
+                At ServiceNow · Sr. Staff Product Designer · 2020 – present
               </div>
-              <div className="text-13 text-slate md:text-right leading-[1.6] flex-shrink-0">
-                ServiceNow<br />
-                Strategic Planning Workspace<br />
-                2025 →
-              </div>
+              <h2 className="font-display font-medium text-[#F7F5F2] text-[clamp(1.5rem,4vw,2.5rem)] tracking-tight leading-[1.12] text-balance">
+                Designing where agentic AI becomes the enterprise interface.
+              </h2>
+              <p className="text-[15px] md:text-16 text-[#AEBFCC] leading-[1.75] mt-5">
+                I lead design on two flagship platforms — the Strategic Planning
+                and Enterprise Architecture Workspaces — and built a foundational
+                Data Grid component now used across the business unit. This work
+                is under NDA;{' '}
+                <Link href="/about" className="text-[#F7F5F2] underline decoration-[#4A5A68] decoration-2 underline-offset-4 hover:decoration-amber-bright transition-colors">
+                  the full account is on the about page
+                </Link>.
+              </p>
             </motion.div>
 
-            {/* 3-card grid — staggered */}
-            <motion.div
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
-              viewport={viewport}
-              className="grid grid-cols-1 md:grid-cols-3 border border-white/[0.06] rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-white/[0.06]"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-12 border border-white/[0.07] rounded-xl overflow-hidden bg-white/[0.07]">
               {focusCards.map((card, i) => (
-                <motion.div
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 24 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-                    },
-                  }}
-                  className="bg-[#1A2530] hover:bg-[#243040] transition-colors duration-200 p-7"
-                >
-                  <h3 className="text-16 font-medium text-[#F7F5F2] mb-2.5 leading-[1.3]">
+                <div key={i} className="bg-[#161F29] p-7">
+                  <h3 className="text-15 font-semibold text-[#F7F5F2] mb-2.5 leading-[1.3]">
                     {card.title}
                   </h3>
-                  <p className="text-13 text-[#8FA8BC] leading-[1.7] mb-3.5">
+                  <p className="text-13 text-[#A6B7C4] leading-[1.7] mb-4">
                     {card.body}
                   </p>
-                  <span className="inline-block text-10 font-medium px-2 py-[3px] rounded-sm bg-amber/15 text-amber">
+                  <span className="inline-block text-11 font-medium tracking-snug text-amber-bright">
                     {card.tag}
                   </span>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </section>
 

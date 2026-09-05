@@ -18,7 +18,7 @@ import PageScrollNav from '@/components/PageScrollNav'
 import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
-  title: 'Space Explorer — Debashish Sahu',
+  title: 'Space Explorer',
   description:
     'A gesture-based educational game for Nehru Planetarium Delhi — an NID diploma project covering user research, Kinect technology, three prototype iterations, and user testing with 20 children aged 9–15.',
   openGraph: {

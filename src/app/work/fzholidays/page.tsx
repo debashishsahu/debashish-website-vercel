@@ -16,7 +16,7 @@ import PageScrollNav from '@/components/PageScrollNav'
 import TLDRBlock from '@/components/TLDRBlock'
 
 export const metadata: Metadata = {
-  title: 'FlyDubai Holidays — Debashish Sahu',
+  title: 'FlyDubai Holidays',
   description:
     'Designing a one-stop holiday booking experience for FlyDubai — a 6-month B2C engagement covering user research, competitive analysis, design principles, wireframes, visual design, and usability testing with 36 participants.',
   openGraph: {

@@ -12,7 +12,7 @@ import ImpactMetric from '@/components/ImpactMetric'
 import DocumentEmbed from '@/components/DocumentEmbed'
 
 export const metadata: Metadata = {
-  title: 'Unaccompanied Minors — Debashish Sahu',
+  title: 'Unaccompanied Minors',
   description:
     'A beacon-based IoT solution giving parents real-time peace of mind when their children fly alone — funded by a UK airline and later commercialised by a German carrier.',
   openGraph: {

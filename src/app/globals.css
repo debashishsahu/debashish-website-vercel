@@ -13,11 +13,12 @@
   --bg-card:        #FFFFFF;
   --bg-surface:     #F5F4F0;
   --text-primary:   #1A2530;
-  --text-secondary: #5C6B7A;
-  --text-muted:     #8FA0AE;
+  --text-secondary: #4E5C6A; /* ~7.4:1 on --bg — was #5C6B7A */
+  --text-muted:     #606E7B; /* ~4.6:1 on --bg (AA body) — was #8FA0AE at ~2.4:1 */
   --border:         #E4DDD5;
-  --accent:         #D4882A;
+  --accent:         #D4882A; /* graphic/fill use only — fails AA as text on light grounds */
   --accent-bright:  #E8943A;
+  --accent-text:    #9A5510; /* ~5.4:1 on --bg — accent for labels, links, small text */
   --footer-upper:   #1A2530;
   --footer-lower:   #111B24;
 }
@@ -30,11 +31,12 @@
   --bg-card:        #FFFFFF;
   --bg-surface:     #F0F0F0;
   --text-primary:   #0A0A0A;
-  --text-secondary: #444444;
-  --text-muted:     #888888;
+  --text-secondary: #3D3D3D;
+  --text-muted:     #6A6A6A; /* ~5.1:1 on #FFF — was #888888 at ~3.5:1 */
   --border:         #E8E8E8;
   --accent:         #D4882A;
   --accent-bright:  #E8943A;
+  --accent-text:    #965210; /* ~5.7:1 on #FFF */
   --footer-upper:   #1A2530;
   --footer-lower:   #111B24;
 }
@@ -47,24 +49,28 @@
   --bg-card:        #162130;
   --bg-surface:     #1E2D3D;
   --text-primary:   #F0EDE8;
-  --text-secondary: #8FA0AE;
-  --text-muted:     #7A95A5; /* Raised from #4A6070 → ~5.6:1 contrast (was ~2.7:1, fails WCAG AA) */
-  --border:         #253545;  /* Slightly lighter for better border visibility */
+  --text-secondary: #A9BCC9; /* ~8.6:1 on --bg — was #8FA0AE at ~5.0:1 */
+  --text-muted:     #8AA3B2; /* ~6.4:1 on --bg — was #7A95A5 */
+  --border:         #253545;
   --accent:         #D4882A;
   --accent-bright:  #E8943A;
+  --accent-text:    #E8943A; /* ~6.0:1 on --bg — bright accent reads as text here */
   --footer-upper:   #080E14;
   --footer-lower:   #04080C;
 }
 
-/* ── Smooth theme colour transitions ── */
-*,
-*::before,
-*::after {
+/* ── Theme colour transitions ── scoped to the properties that actually
+   change between themes, and only while a theme switch is in flight
+   (ThemeContext toggles [data-theme-anim] on <html>). A blanket
+   transition on every element is a cost on a large DOM and eases things
+   that should be instant. */
+[data-theme-anim] *,
+[data-theme-anim] *::before,
+[data-theme-anim] *::after {
   transition:
     background-color 300ms ease,
     color 300ms ease,
-    border-color 300ms ease,
-    box-shadow 300ms ease;
+    border-color 300ms ease;
 }
 
 /* Elements that must NOT colour-transition (motion-controlled or instant) */
@@ -73,12 +79,64 @@
   transition: none !important;
 }
 
+/* ── Reduced motion ── honour the OS setting everywhere. Kills entrance
+   animations, the infinite timeline pulse, smooth-scroll, and any
+   framer-driven transform; content stays put and visible. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* framer-motion holds pre-reveal elements at opacity:0 via inline style */
+  [style*="opacity:0"],
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ── Footer ── a fixed dark surface in every theme, so it needs its own
+   light-on-dark token values rather than the active theme's. All contrast
+   ratios below are against --footer-upper (#1A2530 / #080E14). */
+footer {
+  --text-primary:   #F4F1EB;
+  --text-secondary: #C6D2DB;
+  --text-muted:     #9FB1BD; /* ~4.9:1 on #1A2530 */
+  --border:         #33424F;
+}
+
+/* ── Focus ── one visible ring from the palette, for keyboard users only. */
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Browser surfaces themed from the palette ── */
+::selection {
+  background: rgba(212, 136, 42, 0.24);
+  color: var(--text-primary);
+}
+html {
+  caret-color: var(--accent-text);
+  accent-color: var(--accent-text);
+}
+
 @layer base {
   html {
     background-color: var(--bg);
     color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
     scroll-behavior: smooth;
+    /* positioned so framer-motion useScroll computes offsets correctly */
+    position: relative;
   }
 
   body {
@@ -87,6 +145,9 @@
     font-family: 'Outfit', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* clip (not hidden) so <body> does not become a scroll container —
+       that would break framer-motion's useScroll offset calculation. */
+    overflow-x: clip;
   }
 
   * {

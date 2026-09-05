@@ -53,7 +53,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/existing-platform.png',
           alt: 'Screenshots of the existing IMImobile campaign management platform showing the legacy form-based interface',
-          caption: '📌 IMAGE SLOT 1 — existing-platform.png: Screenshots of the old form-based platform. Use a side-by-side or annotated screenshot of the legacy UI to show the problem state.',
+          caption: undefined,
           aspectRatio: 'wide',
         },
       },
@@ -87,7 +87,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/research-process.png',
           alt: 'Research synthesis process showing affinity mapping, card sorting exercise, and stakeholder interview notes',
-          caption: '📌 IMAGE SLOT 2 — research-process.png: Photo or scan of the research process — card sorting exercise, affinity map, whiteboard synthesis, or stakeholder interview documentation.',
+          caption: undefined,
           aspectRatio: 'wide',
         },
       },
@@ -116,7 +116,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/personas.png',
           alt: 'User persona documents for Aaron Loeb (Marketing Head) and Marie Walter (Campaign Manager)',
-          caption: '📌 IMAGE SLOT 3 — personas.png: The two persona documents — Aaron Loeb and Marie Walter. Export from Figma or use a photo of the printed personas.',
+          caption: undefined,
           aspectRatio: 'wide',
         },
       },
@@ -146,7 +146,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/information-architecture.png',
           alt: 'Information architecture diagram showing the three-tier hierarchy of P&L, Campaign Groups, and Deployments with the card sorting process',
-          caption: '📌 IMAGE SLOT 3b — information-architecture.png: The IA diagram showing before/after structure, or the card sorting exercise output. The three-tier hierarchy diagram works well here.',
+          caption: undefined,
           aspectRatio: 'wide',
         },
       },
@@ -187,7 +187,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/dashboard.png',
           alt: 'Redesigned campaign management dashboard showing real-time performance metrics, donut charts, and funnel visualisations',
-          caption: '📌 IMAGE SLOT 4 — dashboard.png: Final dashboard design. Ideally a full-screen or annotated screenshot of the live performance dashboard with charts visible.',
+          caption: undefined,
           aspectRatio: 'panoramic',
         },
       },
@@ -196,7 +196,7 @@ export const caseStudies: CaseStudyData[] = [
         props: {
           src: '/images/imicampaign/campaign-builder.png',
           alt: 'Visual Campaign Builder showing the node-based canvas with connected SMS, email, and segment filter nodes forming a branching campaign flow',
-          caption: '📌 IMAGE SLOT 5 — campaign-builder.png: The Visual Campaign Builder canvas. Show the node-based flow with multiple node types connected — this is the hero design of the project.',
+          caption: undefined,
           aspectRatio: 'panoramic',
         },
       },

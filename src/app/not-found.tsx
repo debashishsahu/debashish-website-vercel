@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -12,36 +12,39 @@ const navLinks = [
 ]
 
 export default function NotFound() {
+  const reduce = useReducedMotion()
+  const rise = (y: number, delay = 0) =>
+    reduce
+      ? {}
+      : {
+          initial: { opacity: 0, y },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] as const },
+        }
   return (
     <>
       <Navbar />
       <main className="px-page-sm md:px-page-md lg:px-page">
-        <div className="max-w-content mx-auto min-h-[70vh] flex flex-col justify-center py-20">
+        <div className="max-w-content mx-auto min-h-[52vh] flex flex-col justify-center py-20">
 
           {/* 404 number */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            {...rise(24, 0)}
             className="flex items-center gap-4 mb-6"
           >
             <div className="w-8 h-[1.5px] bg-amber flex-shrink-0" />
-            <span className="text-12 font-medium uppercase tracking-label text-amber">Error 404</span>
+            <span className="text-12 font-medium uppercase tracking-label text-amber-text">Error 404</span>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-[56px] md:text-[72px] font-medium text-ink tracking-tight leading-[1.0] mb-5"
+            {...rise(28, 0.08)}
+            className="font-display text-[clamp(2.25rem,9vw,4.5rem)] font-medium text-ink tracking-tight leading-[1.02] mb-5"
           >
             Page not found.
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+            {...rise(20, 0.16)}
             className="text-18 text-slate leading-[1.65] max-w-[520px] mb-10"
           >
             Looks like this page took a wrong turn. It may have been moved,
@@ -50,9 +53,7 @@ export default function NotFound() {
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+            {...rise(16, 0.24)}
             className="flex flex-wrap gap-3 mb-14"
           >
             <motion.div
@@ -70,7 +71,7 @@ export default function NotFound() {
             </motion.div>
             <Link
               href="/work"
-              className="inline-flex items-center gap-1.5 text-13 font-medium text-amber hover:text-amber/70 transition-colors duration-200 py-[10px]"
+              className="inline-flex items-center gap-1.5 text-13 font-medium text-amber-text underline decoration-amber/40 underline-offset-4 hover:decoration-amber transition-colors duration-200 py-[10px]"
             >
               View my work
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -79,7 +80,7 @@ export default function NotFound() {
 
           {/* Divider */}
           <motion.div
-            initial={{ opacity: 0, scaleX: 0 }}
+            initial={reduce ? false : { opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ duration: 0.5, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
             style={{ originX: 0 }}
@@ -88,9 +89,7 @@ export default function NotFound() {
 
           {/* Quick nav */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.38 }}
+            {...rise(0, 0.38)}
             className="flex flex-wrap gap-x-6 gap-y-2"
           >
             <span className="text-12 text-mist uppercase tracking-label">Explore</span>
@@ -98,7 +97,7 @@ export default function NotFound() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-13 font-medium text-slate hover:text-amber transition-colors duration-150"
+                className="text-13 font-medium text-slate hover:text-amber-text transition-colors duration-150"
               >
                 {link.label}
               </Link>

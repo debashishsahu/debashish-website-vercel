@@ -6,7 +6,7 @@ import TimelineEntry from '@/components/TimelineEntry'
 import ParallaxHero from '@/components/ParallaxHero'
 
 export const metadata: Metadata = {
-  title: 'About — Debashish Sahu',
+  title: 'About',
   description:
     'Sr. Staff Product Designer at ServiceNow with 15+ years of experience. NID and ISB alumnus. Passionate about AI-powered enterprise products, design systems, and human-centred interaction design.',
   openGraph: {
@@ -152,9 +152,9 @@ export default function AboutPage() {
         {/* Personal intro */}
         <section className="px-page-sm md:px-page-md lg:px-page py-[60px]">
           <div className="max-w-content mx-auto">
-            <h2 className="font-display text-[32px] md:text-[28px] font-medium text-ink tracking-tighter leading-[1.15] mb-5">
-              👋 Hi, I&apos;m Debashish.
-            </h2>
+            <h1 className="font-display text-[clamp(1.75rem,5.5vw,2.5rem)] font-medium text-ink tracking-tight leading-[1.15] mb-5">
+              <span aria-hidden="true">👋</span> Hi, I&apos;m Debashish.
+            </h1>
             {/* Interest tags */}
             <div className="flex flex-wrap gap-2 mb-8">
               {[
@@ -166,7 +166,7 @@ export default function AboutPage() {
                 { emoji: '📺', label: 'TV & movies binger' },
               ].map(({ emoji, label }) => (
                 <span key={label} className="inline-flex items-center gap-1.5 text-13 font-medium text-slate bg-linen/60 border border-linen rounded-full px-3.5 py-1.5">
-                  <span>{emoji}</span>{label}
+                  <span aria-hidden="true">{emoji}</span>{label}
                 </span>
               ))}
             </div>

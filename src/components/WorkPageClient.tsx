@@ -71,7 +71,7 @@ export default function WorkPageClient({ keyProjects, otherProjects, sideProject
                       )
                     })}
                   </div>
-                  <h2 className="font-display text-[28px] md:text-[26px] font-medium text-ink tracking-tight leading-[1.2] mb-3">
+                  <h2 className="font-display text-[24px] md:text-[28px] font-medium text-ink tracking-tight leading-[1.2] mb-3">
                     {heroProject.title}
                   </h2>
                   <p className="text-14 text-slate leading-[1.7] mb-6 max-w-[360px]">
@@ -118,15 +118,20 @@ export default function WorkPageClient({ keyProjects, otherProjects, sideProject
         </FadeUp>
       )}
 
-      {/* ── Filter bar ── */}
-      <div className="flex flex-wrap gap-2 mb-10 pl-[17px]">
+      {/* ── Filter bar ── horizontal scroller on narrow screens, wraps at md */}
+      <div
+        role="group"
+        aria-label="Filter projects by tag"
+        className="flex md:flex-wrap gap-2 mb-10 md:ml-[17px] -mx-page-sm px-page-sm md:mx-0 md:px-0 overflow-x-auto md:overflow-visible snap-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
         {/* All pill */}
         <button
           onClick={() => setActiveTag(null)}
-          className={`text-12 font-medium px-3.5 py-1.5 rounded-full border transition-colors duration-150 ${
+          aria-pressed={activeTag === null}
+          className={`shrink-0 snap-start text-12 font-medium px-4 py-2 rounded-full border transition-colors duration-150 ${
             activeTag === null
               ? 'bg-ink text-canvas border-ink'
-              : 'bg-transparent text-mist border-linen hover:border-ink/40 hover:text-slate'
+              : 'bg-transparent text-slate border-linen hover:border-ink/40 hover:text-ink'
           }`}
         >
           All
@@ -136,10 +141,11 @@ export default function WorkPageClient({ keyProjects, otherProjects, sideProject
           <button
             key={tag}
             onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-            className={`text-12 font-medium px-3.5 py-1.5 rounded-full border transition-colors duration-150 ${
+            aria-pressed={activeTag === tag}
+            className={`shrink-0 snap-start text-12 font-medium px-4 py-2 rounded-full border transition-colors duration-150 ${
               activeTag === tag
-                ? 'bg-amber text-ink border-amber'
-                : 'bg-transparent text-mist border-linen hover:border-amber/50 hover:text-slate'
+                ? 'bg-ink text-canvas border-ink'
+                : 'bg-transparent text-slate border-linen hover:border-ink/40 hover:text-ink'
             }`}
           >
             {tag}

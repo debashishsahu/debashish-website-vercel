@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { barGrow, fadeUp, staggerContainer, viewport } from '@/lib/animations'
 
 interface SectionHeaderProps {
@@ -18,10 +18,11 @@ export default function SectionHeader({
   subtitle,
   className = '',
 }: SectionHeaderProps) {
+  const reduce = useReducedMotion()
   return (
     <motion.div
       variants={staggerContainer}
-      initial="hidden"
+      initial={reduce ? false : 'hidden'}
       whileInView="visible"
       viewport={viewport}
       className={`mt-section-sm md:mt-section-md lg:mt-section mb-6 ${className}`}

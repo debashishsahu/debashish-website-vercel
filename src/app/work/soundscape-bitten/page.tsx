@@ -8,7 +8,7 @@ import HighlightBlock from '@/components/HighlightBlock'
 import LabeledItem from '@/components/LabeledItem'
 
 export const metadata: Metadata = {
-  title: 'Bitten — Soundscape — Debashish Sahu',
+  title: 'Bitten — Soundscape',
   description:
     'A 2-minute soundscape following an apple from fruit market to customer — a narrative audio design exercise from NID.',
   openGraph: {

@@ -75,6 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={active ? 'page' : undefined}
                 className={`text-14 transition-colors relative pb-0.5 ${
                   active ? 'text-ink font-medium' : 'text-slate hover:text-ink'
                 }`}
@@ -90,16 +91,14 @@ export default function Navbar() {
               </Link>
             )
           })}
-          <motion.a
+          <a
             href="/resume/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-12 font-medium uppercase tracking-label text-amber border border-amber px-4 py-2 rounded"
-            whileHover={{ backgroundColor: '#D4882A', color: '#1A2530' }}
-            transition={{ duration: 0.18 }}
+            className="text-12 font-medium uppercase tracking-label text-amber-text border border-amber px-4 py-2 rounded transition-colors hover:bg-ink hover:text-canvas hover:border-ink"
           >
             Resume
-          </motion.a>
+          </a>
 
           <div className="w-px h-4 bg-linen" />
           <ThemeSwitcher />
@@ -148,6 +147,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  aria-current={active ? 'page' : undefined}
                   className={`flex items-center justify-between border-b border-linen py-4 px-5 text-16 transition-colors ${
                     active ? 'text-ink font-medium' : 'text-slate'
                   }`}
@@ -162,7 +162,7 @@ export default function Navbar() {
                 href="/resume/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center text-amber border border-amber py-3 text-14 font-medium uppercase tracking-label rounded hover:bg-amber hover:text-ink transition-colors"
+                className="block w-full text-center text-amber-text border border-amber py-3 text-14 font-medium uppercase tracking-label rounded hover:bg-ink hover:text-canvas hover:border-ink transition-colors"
               >
                 Resume
               </a>

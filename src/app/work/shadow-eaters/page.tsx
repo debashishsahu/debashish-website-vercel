@@ -9,7 +9,7 @@ import LabeledItem from '@/components/LabeledItem'
 import ImageGroup from '@/components/ImageGroup'
 
 export const metadata: Metadata = {
-  title: 'Shadow Eaters — Debashish Sahu',
+  title: 'Shadow Eaters',
   description:
     "An immersive interactive installation where a swarm of generative insects consumes the observer's shadow — inspired by Japanese folklore, built at NID.",
   openGraph: {
